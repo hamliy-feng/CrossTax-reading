@@ -104,6 +104,8 @@ def assess(payload):
         missing.append('classification_confirmed')
     if facts.get('pe_effective_connection') is True:
         blocked.append('所得与常设机构有效关联，需转入营业利润及当地税制分析')
+    elif facts.get('pe_effective_connection') is not False:
+        missing.append('pe_effective_connection')
     requirements=['beneficial_owner','recipient_tax_resident','eligibility_documents','principal_purpose_test_passed']
     for k in requirements:
         if facts.get(k) is not True:
@@ -127,6 +129,9 @@ def assess(payload):
             more=[k for k in p['required_facts'] if facts.get(k) is not True]
             result['sources']=p['official_evidence'];result['rule_version']={'id':p['package_id'],'sha256':p['evidence_sha256'],'effective_from':p['effective_from'],'effective_until':p['effective_until']}
             result['missing_facts'].extend(more)
+            result['confidence_explanation']['facts_complete']=not more
+            if more:
+                result['status']='facts_missing'
             if not more:
                 result['tax_estimate']=str((amount*p['taxable_fraction']*p['nominal_rate']).quantize(Decimal('.01'),rounding=ROUND_HALF_UP))
                 result['status']='approved';result['confidence_explanation']['period_checked']=True

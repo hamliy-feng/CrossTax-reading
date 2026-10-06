@@ -126,6 +126,9 @@ async def lifespan(app):
             for m in obj.get('messages',[]):
                 if m.get('status')=='running':
                     m['status']='interrupted';changed=True
+                    for item in m.get('tools',[])+m.get('model_calls',[]):
+                        if item.get('status')=='running':
+                            item['status']='interrupted'
         if changed:
             store.put(row['owner_id'],row['kind'],row['record_id'],obj,expected=row['revision'])
     yield

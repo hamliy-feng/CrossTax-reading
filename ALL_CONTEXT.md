@@ -31,7 +31,8 @@
       "selected_conversation_move",
       "versioned_summary",
       "legal_search_original_links",
-      "history_restore_after_server_restart"
+      "history_restore_after_server_restart",
+      "human_readable_tax_form_unknown_conditions_and_40000_conditional_example"
     ],
     "actual_backend_model_calls": [
       "ordinary_chat",
@@ -61,8 +62,8 @@
     "disclaimer_once_in_final_answer_summary_and_export": true
   },
   "checks": {
-    "web_python_passed": 47,
-    "web_python_total": 47,
+    "web_python_passed": 48,
+    "web_python_total": 48,
     "existing_legal_release_safety_passed": 14,
     "existing_legal_release_safety_total": 14,
     "javascript_syntax": "pass",
@@ -70,6 +71,7 @@
     "local_postgresql_app_schema_JSON_CAS": "pass",
     "real_local_restart_records_and_file_hashes": "pass",
     "real_local_restart_partial_answer_and_task_interrupted": "pass",
+    "real_local_restart_tool_and_model_call_interrupted": "pass",
     "owner_isolation_and_branch_regression": "pass",
     "real_search_and_real_auth": "pending",
     "mainland_multiple_networks": "not_tested"
@@ -123,6 +125,10 @@
     "research/acceptance/reading_browser_2026-10-07.txt",
     "research/acceptance/workbench_browser_2026-10-07.png",
     "research/acceptance/workbench_browser_paddle_2026-10-07.json",
+    "research/acceptance/workbench_calculator_browser_2026-10-07.txt",
+    "research/acceptance/workbench_calculator_2026-10-07.json",
+    "research/acceptance/workbench_calculator_2026-10-07.png",
+    "research/acceptance/workbench_calculator_paddle_2026-10-07.json",
     "research/acceptance/legal_release_regression_2026-10-07.json",
     "research/acceptance/cloud_bundle_preparation_2026-10-07.json",
     "research/benchmarks/first_ten_acceptance.json",

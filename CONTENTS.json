@@ -7,8 +7,8 @@
   },
   {
     "path": "ALL_CONTEXT.md",
-    "sha256": "8e917b9ee4b4d9d6904cd4783e6591b06f7febbb6eb12b37b45966f17495ae93",
-    "bytes": 32428,
+    "sha256": "5f4de78f7f9b07c068b57913752f58df62a398ec96b974161194a07aaa1c2ac7",
+    "bytes": 32851,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/ALL_CONTEXT.md"
   },
   {
@@ -745,14 +745,14 @@
   },
   {
     "path": "code/web/index.html",
-    "sha256": "b43640a958f664d4db483856be75fc6055954b9183912d135bd2d1545ac3ee96",
-    "bytes": 31666,
+    "sha256": "afe1d86cdd2ec937a258dff0e3c937a09ad012a00dab96c3bd9577b9484bbc1a",
+    "bytes": 32103,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/index.html"
   },
   {
     "path": "code/web/legal_service.py",
-    "sha256": "fc4e4a34bc866eff6c9b11a1aca86e624470bda3ba8c7d46b016cabaa3b3f714",
-    "bytes": 8560,
+    "sha256": "3a8ece46d5edca164b2fe5f0a65d348fe7f55c28206fec9e579c77ac05ba349a",
+    "bytes": 8812,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/legal_service.py"
   },
   {
@@ -763,7 +763,7 @@
   },
   {
     "path": "code/web/README.md",
-    "sha256": "06f144c84efefff55e7ff5cedb7f1dee3cfcade6553d38ce52fa4edf663491c7",
+    "sha256": "64d5c42a3bd631ce280e34b66ed95e7a0bf971e2c33c515dd53a2bc455f622d3",
     "bytes": 7550,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/README.md"
   },
@@ -775,20 +775,20 @@
   },
   {
     "path": "code/web/test_workbench.py",
-    "sha256": "9f3604f56ec150f2794b6c42bcafce887b706f3050acaf6989dc5e8c0617a291",
-    "bytes": 14446,
+    "sha256": "80f28a5cd870b79b8f58677775b4a6d8d3e57a25ea517ddda4dca4d4f88dcb21",
+    "bytes": 15966,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/test_workbench.py"
   },
   {
     "path": "code/web/workbench-extension.js",
-    "sha256": "dd735b35b100931a67086ed9e8d2fc854252dc90fd56d2a5034672b188e94e19",
-    "bytes": 22382,
+    "sha256": "38480a6b004e2075f40c8fc34e5cb03be7b33f71bb722e6a10f4852690ca0541",
+    "bytes": 29257,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/workbench-extension.js"
   },
   {
     "path": "code/web/workbench.py",
-    "sha256": "723d5c758fe9a0d11bdc4f04d64eae26bc7c12305e51192b9f739c49b3d4b2cf",
-    "bytes": 42877,
+    "sha256": "516cd2efd2cb1edc763092671438c260931d89bcf427f0d2c96cb5a38575b13e",
+    "bytes": 43067,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/workbench.py"
   },
   {
@@ -877,20 +877,20 @@
   },
   {
     "path": "schema/crosstax_structure.sql",
-    "sha256": "4cf0c5337282d8db3c28147cdd6ed40d3dfd24ebc660cae852d76bf5a2914285",
+    "sha256": "285fc83ff366975a5d66c2fdd1d1a29d44e3143d6f2893f7c6677935b9889970",
     "bytes": 99971,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/schema/crosstax_structure.sql"
   },
   {
     "path": "SOURCE_VERSION.json",
-    "sha256": "bdefa0a8346d4049f3cefb290d340ac4692dde9b39eaa05a33f34277240bc3d4",
+    "sha256": "d0928342024b35faea88ba0cfe6ae241a95781dc52a8c7aa1402c4368e84f24a",
     "bytes": 373,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/SOURCE_VERSION.json"
   },
   {
     "path": "STATUS.md",
-    "sha256": "0731184713f2ad4769c166b9aac625bc226fd53499f4d3b630415e1f755ee968",
-    "bytes": 5383,
+    "sha256": "e116767951a9d31bd7bfd785ab9adb3541775b3c23c440cf1f392cb6863cea9d",
+    "bytes": 5806,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/STATUS.md"
   }
 ]

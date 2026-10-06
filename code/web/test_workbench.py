@@ -200,7 +200,7 @@ def httpx_response(data):
 
 class CalculationTests(unittest.TestCase):
     def test_decimal_explicit_assumption_and_unpublished_gate(self):
-        facts={'payer':'CN','recipient':'SG','income_type':'ROYALTIES','transaction_subtype':'equipment','date':'2026-10-07','classification_confirmed':True,'beneficial_owner':True,'recipient_tax_resident':True,'eligibility_documents':True,'principal_purpose_test_passed':True}
+        facts={'payer':'CN','recipient':'SG','income_type':'ROYALTIES','transaction_subtype':'equipment','date':'2026-10-07','classification_confirmed':True,'beneficial_owner':True,'recipient_tax_resident':True,'eligibility_documents':True,'principal_purpose_test_passed':True,'pe_effective_connection':False}
         with patch.object(legal_service,'rows',return_value=[]):
             r=legal_service.assess({'facts':facts,'amount':'0.10','assumptions':{'nominal_rate':'0.15'}})
         self.assertIsNone(r['tax_estimate']);self.assertEqual(r['conditional_example']['amount'],'0.02')
@@ -209,6 +209,22 @@ class CalculationTests(unittest.TestCase):
     def test_pe_blocks_simple_withholding_formula(self):
         r=legal_service.assess({'facts':{'pe_effective_connection':True},'amount':'100','assumptions':{'nominal_rate':'0.1'}})
         self.assertEqual(r['status'],'exception_requires_analysis');self.assertIsNone(r['conditional_example'])
+
+    def test_unknown_pe_and_packet_specific_conditions_block_amount(self):
+        from decimal import Decimal
+        facts={'payer':'CN','recipient':'SG','income_type':'ROYALTIES','transaction_subtype':'equipment','date':'2026-10-07',
+            'classification_confirmed':True,'beneficial_owner':True,'recipient_tax_resident':True,'eligibility_documents':True,'principal_purpose_test_passed':True}
+        packet={'required_facts':['china_source'],'official_evidence':[],'package_id':'synthetic-published-fixture',
+            'evidence_sha256':'a'*64,'effective_from':'2026-01-01','effective_until':None,'taxable_fraction':Decimal('1'),'nominal_rate':Decimal('0.15')}
+        with patch.object(legal_service,'rows',return_value=[packet]) as query:
+            result=legal_service.assess({'facts':facts,'amount':'0.10'})
+            query.assert_not_called();self.assertIn('pe_effective_connection',result['missing_facts']);self.assertIsNone(result['tax_estimate'])
+            facts['pe_effective_connection']=False
+            result=legal_service.assess({'facts':facts,'amount':'0.10'})
+            self.assertEqual(result['status'],'facts_missing');self.assertFalse(result['confidence_explanation']['facts_complete']);self.assertIsNone(result['tax_estimate'])
+            facts['china_source']=True
+            result=legal_service.assess({'facts':facts,'amount':'0.10'})
+            self.assertEqual(result['tax_estimate'],'0.02');self.assertEqual(result['status'],'approved')
 
     def test_missing_classification_is_explicit(self):
         r=legal_service.assess({'facts':{},'amount':'100'})

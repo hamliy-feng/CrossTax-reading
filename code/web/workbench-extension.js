@@ -3,6 +3,9 @@ window.installCrossTaxWorkbench=function(ctx){
   const {$,state,e,cur,markdownToSafeHtml,originalRender,originalNav,originalToolView}=ctx;
   const wb={enabled:false,projects:[],selected:new Set(),projectFilter:"all",files:[],attached:[],recommendations:[],operation:null};
   const disclaimer="AI 可能会说错，请注意甄别。";
+  let restoreTimer=null,restoreWaiting=false;
+  function restoreRunning(){clearTimeout(restoreTimer);if(!wb.enabled||state.busy||restoreWaiting||!cur()?.messages?.some(m=>m.status==="running"))return;
+    restoreTimer=setTimeout(async()=>{restoreWaiting=true;try{await refreshCases()}catch(err){feedback(err.message)}finally{restoreWaiting=false;restoreRunning()}},2500)}
   async function api(path,body,method){
     const opts={method:method||(body?"POST":"GET"),cache:"no-store"};
     if(body){opts.headers={"Content-Type":"application/json"};opts.body=JSON.stringify(body)}
@@ -79,6 +82,7 @@ window.installCrossTaxWorkbench=function(ctx){
       }
       const actions=e("div","wb-toolbar");actions.append(button("复制",()=>navigator.clipboard.writeText(m.text||"")));
       if(m.role==="user")actions.append(button("编辑重发",()=>{if(state.busy)return;const d=dialog("编辑问题"),i=e("textarea","search");i.value=m.text;d.body.append(i,button("发送新分支",async()=>{wb.operation={operation:"edit",message_id:m.id};$("prompt").value=i.value;d.d.close();await send()}))}));
+      else if(m.status==="running")actions.append(button("停止输出",async()=>{await api(`/api/cases/${c.id}/stop`,{});await refreshCases()}));
       else actions.append(button("重新生成",async()=>{if(state.busy)return;wb.operation={operation:"regenerate",message_id:m.id};await send()}));
       actions.append(button("删除",async()=>{if(state.busy)return;await api(`/api/cases/${c.id}/messages/${m.id}`,null,"DELETE");await refreshCases()}));
       const siblings=c.messages.filter(x=>x.role===m.role&&x.parent_id===m.parent_id&&!x.deleted);
@@ -93,14 +97,54 @@ window.installCrossTaxWorkbench=function(ctx){
     root.append(e("h2","",state.view==="calculator"?"税务计算":state.view==="treaty"?"协定资料检索":"法律资料检索"));
     if(state.view==="calculator"){
       root.append(e("p","small-desc","输入交易事实和金额。通过发布条件的规则可返回税额，其余列出缺口；使用人输入的税率仅用于条件算例。"));
-      const input=e("textarea","search");input.rows=15;input.value=JSON.stringify({facts:{payer:"CN",recipient:"SG",income_type:"ROYALTIES",transaction_subtype:"industrial_commercial_scientific_equipment",date:"2026-10-07",classification_confirmed:true,beneficial_owner:true,recipient_tax_resident:true,eligibility_documents:true,principal_purpose_test_passed:true,pe_effective_connection:false},amount:"1000000",currency:"CNY"},null,2);
-      const out=e("pre","wb-result");root.append(input,button("计算",async()=>{const result=await api("/api/tax/assess",JSON.parse(input.value));out.textContent=JSON.stringify(result.result,null,2)}),out);return
+      const form=e("div","wb-tax-form"),conditions=e("details","wb-tax-conditions"),out=e("div","wb-result"),fields={},labels={
+        payer:"付款方法域",recipient:"收款方法域",income_type:"所得类型",transaction_subtype:"交易性质",date:"交易日期",
+        classification_confirmed:"交易性质已确认",beneficial_owner:"收款方符合受益所有人条件",recipient_tax_resident:"收款方具有所选法域税收居民身份",
+        eligibility_documents:"优惠申请所需证明齐全",principal_purpose_test_passed:"符合主要目的测试",pe_effective_connection:"所得是否与常设机构存在有效关联",
+        shareholding_conditions_met:"股息持股比例及期限满足条件",china_source:"所得来源于中国",no_cn_pe_effective_connection:"所得与中国常设机构无有效关联",recipient_tax_resident_SG:"收款方为新加坡税收居民"};
+      function field(key,label,control,container=form){control.id="wbTax_"+key;fields[key]=control;const wrap=e("label","wb-tax-field");wrap.htmlFor=control.id;wrap.append(e("span","",label),control);container.append(wrap);return control}
+      function input(key,label,type,value,container=form){const x=e("input","search");x.type=type;x.value=value;return field(key,label,x,container)}
+      function select(key,label,options,container=form){const x=e("select","search");options.forEach(([value,text])=>{const option=e("option","",text);option.value=value;x.append(option)});return field(key,label,x,container)}
+      input("payer",labels.payer,"text","中国");input("recipient",labels.recipient,"text","新加坡");
+      fields.payer.placeholder=fields.recipient.placeholder="国家或地区，如中国、新加坡、香港，或两位代码";
+      select("scenario","交易性质",[["ROYALTIES|industrial_commercial_scientific_equipment","设备使用费"],["ROYALTIES|copyright_software_license","软件许可费"],["ROYALTIES|other_royalty","其他特许权使用费"],["DIVIDENDS|corporate_dividend","公司股息"],["INTEREST|debt_interest","债务利息"]]);
+      const today=new Date();input("date",labels.date,"date",today.getFullYear()+"-"+String(today.getMonth()+1).padStart(2,"0")+"-"+String(today.getDate()).padStart(2,"0"));
+      input("amount","支付金额","number","").min="0";select("currency","币种",[["CNY","人民币 CNY"],["USD","美元 USD"],["SGD","新加坡元 SGD"],["HKD","港元 HKD"],["EUR","欧元 EUR"]]);
+      conditions.append(e("summary","","交易条件（不确定时保留“尚不清楚”）"));
+      ["classification_confirmed","beneficial_owner","recipient_tax_resident","eligibility_documents","principal_purpose_test_passed","pe_effective_connection","shareholding_conditions_met","china_source"].forEach(key=>select(key,labels[key],[["","尚不清楚"],["true","是"],["false","否"]],conditions));
+      const examples=e("details","wb-tax-conditions");examples.append(e("summary","","可选：按自己输入的假设做算例"));
+      input("assumed_rate","假设税率（%）","number","",examples).min="0";fields.assumed_rate.max="100";fields.assumed_rate.step="0.0001";
+      input("assumed_portion","计入税基的比例（%）","number","100",examples).min="0";fields.assumed_portion.max="100";fields.assumed_portion.step="0.0001";
+      examples.append(e("p","small-desc","只有主动填写税率才生成算例；该税率不会被当作已确认的法定税率。"));
+      const aliases={中国:"CN",中国大陆:"CN",新加坡:"SG",香港:"HK",中国香港:"HK",英国:"GB",美国:"US",日本:"JP",德国:"DE",法国:"FR",澳大利亚:"AU",韩国:"KR",马来西亚:"MY",泰国:"TH",越南:"VN",印度尼西亚:"ID"};
+      function jurisdiction(value){const key=value.trim(),code=aliases[key]||key.toUpperCase();if(!/^[A-Z]{2}$/.test(code))throw Error("请选择国家或填写两位法域代码");return code}
+      // Send exact decimal strings. Floating point is used only for display.
+      function percentDecimal(value){if(!/^\d{1,3}(?:\.\d{1,4})?$/.test(value)||Number(value)>100)throw Error("比例应为 0–100，最多四位小数");const [whole,part=""]=value.split(".");if(Number(value)===100)return "1";return "0."+String(Number(whole)).padStart(2,"0")+part}
+      root.append(form,conditions,examples,button("计算",async()=>{
+        if(!fields.amount.value)throw Error("请填写支付金额");
+        const [income_type,transaction_subtype]=fields.scenario.value.split("|"),facts={payer:jurisdiction(fields.payer.value),recipient:jurisdiction(fields.recipient.value),income_type,transaction_subtype,date:fields.date.value};
+        Object.keys(labels).forEach(key=>{if(fields[key]&&["true","false"].includes(fields[key].value))facts[key]=fields[key].value==="true"});
+        if(facts.pe_effective_connection!==undefined)facts.no_cn_pe_effective_connection=facts.pe_effective_connection===false;
+        if(facts.recipient_tax_resident!==undefined)facts["recipient_tax_resident_"+facts.recipient]=facts.recipient_tax_resident;
+        const payload={facts,amount:fields.amount.value,currency:fields.currency.value};
+        if(fields.assumed_rate.value!="")payload.assumptions={nominal_rate:percentDecimal(fields.assumed_rate.value),taxable_fraction:percentDecimal(fields.assumed_portion.value)};
+        out.replaceChildren(e("p","","正在检查交易条件…"));const result=(await api("/api/tax/assess",payload)).result;
+        const statuses={facts_missing:"还需要补充交易事实",rule_not_published:"尚无匹配的正式规则",approved:"按匹配规则计算",version_conflict:"适用版本存在冲突",exception_requires_analysis:"需要分析常设机构及当地税制"};
+        out.replaceChildren(e("h3","",statuses[result.status]||"交易评估"));
+        if(result.tax_estimate!==null)out.append(e("p","","税额："+result.tax_estimate+" "+result.currency));
+        if(result.conditional_example){const x=result.conditional_example;out.append(e("p","","假设算例："+x.amount+" "+x.currency),e("p","small-desc",result.amount+" × "+String(Number(x.taxable_fraction)*100)+"% × "+String(Number(x.nominal_rate)*100)+"%"),e("p","small-desc",x.basis))}
+        if(result.missing_facts.length){out.append(e("h4","","需要补充"));const list=e("ul");result.missing_facts.forEach(key=>list.append(e("li","",labels[key]||"匹配规则所需条件："+key)));out.append(list)}
+        result.conflicts.forEach(text=>out.append(e("p","",text)));
+        if(result.rule_version)out.append(e("p","small-desc","规则版本："+result.rule_version.id+"；适用起日："+result.rule_version.effective_from));
+        (result.sources||[]).forEach(source=>{const url=source.original_url||source.url;if(url&&/^https?:\/\//.test(url)){const a=e("a","",source.official_title||source.title||"查看来源原文");a.href=url;a.target="_blank";a.rel="noopener";out.append(a)}});
+        out.append(e("p","small-desc","AI 可能会说错，请注意甄别。"));
+      }),out);return
     }
     const query=e("input","search"),partner=e("input","search"),out=e("div","wb-search-results");query.placeholder="关键词，如特许权、股息";partner.placeholder="法域代码（可留空），如 SG、HK";
     root.append(query,partner,button("检索法律库",async()=>{const r=await api("/api/legal/search",{query:query.value,partner:partner.value||null});out.replaceChildren();
       if(!r.results.length)out.append(e("p","","没有命中，尝试修改关键词。"));r.results.forEach(x=>{const card=e("div","wb-source");card.append(e("h3","",x.official_title),e("p","small-desc",x.applicability_note),e("p","",x.excerpt));if(x.original_url){const a=e("a","","原文 ↗");a.href=x.original_url;a.target="_blank";a.rel="noopener noreferrer";card.append(a)}card.append(e("p","small-desc","证据快照："+r.evidence_id+" · "+(x.version_id||"")+" · 页 "+(x.pdf_page_start||x.page_num||"")));out.append(card)})}),out)
   }
-  function render(){originalRender();if(wb.enabled){$("send").disabled=false;$("attachFile").textContent="＋ 上传文件";$("prompt").placeholder="输入问题，或描述你想完成的工作……";$("fileLabel").textContent=wb.attached.length?"已选 "+wb.attached.length+" 个附件":""}}
+  function render(){originalRender();if(wb.enabled){$("send").disabled=false;$("attachFile").textContent="＋ 上传文件";$("prompt").placeholder="输入问题，或描述你想完成的工作……";$("fileLabel").textContent=wb.attached.length?"已选 "+wb.attached.length+" 个附件":"";restoreRunning()}}
   async function send(){if(!wb.enabled)return ctx.originalSend();if(state.busy)return;
     const op=wb.operation||{},prompt=$("prompt").value.trim();if(!prompt&&op.operation!=="regenerate")return;
     const c=cur();state.view="research";
