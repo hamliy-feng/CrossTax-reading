@@ -1,0 +1,7 @@
+{
+  "tax_estimate": null,
+  "reason": "当前正式发布规则为零；完整事实也不能绕过发布闸门",
+  "required_missing_fact": "recipient_tax_resident",
+  "expected_pe_exception": false,
+  "professional_verdict": "not_performed"
+}

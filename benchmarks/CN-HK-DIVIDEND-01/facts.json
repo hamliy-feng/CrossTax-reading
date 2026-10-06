@@ -1,0 +1,17 @@
+{
+  "payer": "CN",
+  "recipient": "HK",
+  "income_type": "DIVIDENDS",
+  "transaction_subtype": "corporate_dividend",
+  "date": "2026-10-07",
+  "classification_confirmed": true,
+  "beneficial_owner": true,
+  "recipient_tax_resident": true,
+  "eligibility_documents": true,
+  "principal_purpose_test_passed": true,
+  "pe_effective_connection": false,
+  "no_cn_pe_effective_connection": true,
+  "recipient_tax_resident_SG": false,
+  "china_source": true,
+  "shareholding_conditions_met": true
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.ird.gov.hk/eng/pdf/Consolidated_Text_Mainland_HKSAR.pdf",
+    "retrieved_at": "2026-10-06T18:15:31.917834+00:00",
+    "sha256": null,
+    "http_status": null,
+    "error": "ConnectError",
+    "note": "内地香港安排综合文本；仍须逐一核对议定书及程序"
+  },
+  {
+    "url": "https://www.ird.gov.hk/eng/pdf/dipn44.pdf",
+    "retrieved_at": "2026-10-06T18:15:42.987115+00:00",
+    "sha256": null,
+    "http_status": null,
+    "error": "ConnectError",
+    "note": "香港税务局 DIPN44；解释性资料，不能替代安排原文"
+  }
+]

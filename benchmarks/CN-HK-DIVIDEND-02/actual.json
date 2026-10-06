@@ -1,0 +1,121 @@
+{
+  "code_base_commit": "84dab85cbb41b853bf3c60b855909beafd39a565",
+  "new_code_sha256": "fc4e4a34bc866eff6c9b11a1aca86e624470bda3ba8c7d46b016cabaa3b3f714",
+  "recorded_at": "2026-10-06T18:15:56.810496+00:00",
+  "input": {
+    "facts": {
+      "payer": "CN",
+      "recipient": "HK",
+      "income_type": "DIVIDENDS",
+      "transaction_subtype": "corporate_dividend",
+      "date": "2026-10-07",
+      "classification_confirmed": true,
+      "beneficial_owner": null,
+      "recipient_tax_resident": true,
+      "eligibility_documents": null,
+      "principal_purpose_test_passed": true,
+      "pe_effective_connection": false,
+      "no_cn_pe_effective_connection": true,
+      "recipient_tax_resident_SG": false,
+      "china_source": true,
+      "shareholding_conditions_met": false
+    },
+    "amount": "1000000.00",
+    "currency": "CNY"
+  },
+  "legal_search": {
+    "query": "股息",
+    "results": [
+      {
+        "id": "guide-HK-25-1",
+        "official_title": "中国香港投资税收指南",
+        "original_url": "https://www.chinatax.gov.cn/chinatax/c103103/c2069874/5246412/files/d880886432014b75bedaf915761c6298.pdf",
+        "page_num": 25,
+        "source_locator": "sha256:276f1e5df96f30d0d9a09b792c6c92c61f99026c6be3f8b63fb50859967d018e#page=25;part=1",
+        "original_sha256": "276f1e5df96f30d0d9a09b792c6c92c61f99026c6be3f8b63fb50859967d018e",
+        "chunk_sha256": "70cb4db0318f1945b7916d64f4112d1e0214b123478793cc31dca6b74187c23f",
+        "excerpt": "中国内地居民赴香港特别行政区投资税收指南 \n \n 17 \n \n第二章  香港税收制度简介 \n2.1 概览 \n2.1.1 税制综述 \n税收是香港特区政府重要的财政收入来源。 除特定行业和登记费\n用外， 现行香港税制， 主要就个人或企业取得来源于香港的营业利润、\n薪金和租金三类所得征税。 香港特区政府未就销售环节或资本增值方\n面征税（如没有增值税等），即在商品全部的生产和流通环节，基本\n上都不征税。 另外， 香港一般不会对股息和其他资本性所得课征税收。 \n香港现行税制体系属于分类税制，以所得税为主，辅之征收行为\n税和财产税等，主要税（费）种如下：薪俸税（Salaries Tax）、利\n得税（Pro",
+        "level": "research_guide",
+        "applicability_note": "国别研究指南，不能代替当地正式法律"
+      },
+      {
+        "id": "guide-HK-31-1",
+        "official_title": "中国香港投资税收指南",
+        "original_url": "https://www.chinatax.gov.cn/chinatax/c103103/c2069874/5246412/files/d880886432014b75bedaf915761c6298.pdf",
+        "page_num": 31,
+        "source_locator": "sha256:276f1e5df96f30d0d9a09b792c6c92c61f99026c6be3f8b63fb50859967d018e#page=31;part=1",
+        "original_sha256": "276f1e5df96f30d0d9a09b792c6c92c61f99026c6be3f8b63fb50859967d018e",
+        "chunk_sha256": "82b9413c179f75f88a45b569c10c9f6b7987c9c1c5f6013d1c38930fe71b78be",
+        "excerpt": "中国内地居民赴香港特别行政区投资税收指南 \n \n 23 \n \n在香港管理的合资格单一家族办公室、 合资格家族投资控权工具\n及家族特定目的实体， 从合资格交易及附带交易中所获得的应评税利\n润，可按0%的税率缴纳利得税。 \n在专利盒机制下，合资格人士可享有税务宽减，以使其从合资格\n知识产权收入所得的应评税利润的特惠部分，可按特惠税率 5%课缴\n利得税。 \n（3）利得税两级制 \n利得税两级制适用于2018年4 月1 日及之后开始的课税年度。 \n企业首200万港元的利润利得税税率降至8.25%，其后的利润则\n继续按16.5%征税。合伙业务等非企业法人，两级的利得税税率相应\n为7.5%及15%。 \n同一",
+        "level": "research_guide",
+        "applicability_note": "国别研究指南，不能代替当地正式法律"
+      },
+      {
+        "id": "guide-HK-145-1",
+        "official_title": "中国香港投资税收指南",
+        "original_url": "https://www.chinatax.gov.cn/chinatax/c103103/c2069874/5246412/files/d880886432014b75bedaf915761c6298.pdf",
+        "page_num": 145,
+        "source_locator": "sha256:276f1e5df96f30d0d9a09b792c6c92c61f99026c6be3f8b63fb50859967d018e#page=145;part=1",
+        "original_sha256": "276f1e5df96f30d0d9a09b792c6c92c61f99026c6be3f8b63fb50859967d018e",
+        "chunk_sha256": "b4b0617fc23e556305640581ec218a381200547579d2aa239cf7bdc66e15e1c9",
+        "excerpt": "中国内地居民赴香港特别行政区投资税收指南 \n \n 137 \n \n第四章  特别纳税调整政策 \n4.1 关联交易 \n4.1.1 关联关系判定标准 \n（1）当一方企业直接或者间接参与另一方企业的管理、控制或\n资本； \n（2）同一人直接或者间接参与一方企业和另一方企业的管理、\n控制或资本。 \n在上述任何一种情况下， 两个企业之间的商业或财务关系不同于\n独立企业之间的关系。因此，本应由其中一个企业取得，但由于这些\n情况而没有取得的利润，可以计入该企业的利润并据以征税。 \n4.1.2 关联交易基本类型 \n关联交易的主要类型为关联财产转让（动产或不动产，不包括财\n务资产及无形资产）、关联财务资产交易、关联",
+        "level": "research_guide",
+        "applicability_note": "国别研究指南，不能代替当地正式法律"
+      },
+      {
+        "id": "guide-HK-171-1",
+        "official_title": "中国香港投资税收指南",
+        "original_url": "https://www.chinatax.gov.cn/chinatax/c103103/c2069874/5246412/files/d880886432014b75bedaf915761c6298.pdf",
+        "page_num": 171,
+        "source_locator": "sha256:276f1e5df96f30d0d9a09b792c6c92c61f99026c6be3f8b63fb50859967d018e#page=171;part=1",
+        "original_sha256": "276f1e5df96f30d0d9a09b792c6c92c61f99026c6be3f8b63fb50859967d018e",
+        "chunk_sha256": "f9db7faa79f0b93d8696f4a60afe7d36588347e1c8c19da695122f84fcfb19a9",
+        "excerpt": "中国内地居民赴香港特别行政区投资税收指南 \n \n 163 \n \n5.1.4 不同类型收入的税收管辖 \n根据目前内地和香港税收安排，收入类型包括股息、利息、特许\n权使用费，财产转让所得，营业利润不动产所得以及个人劳务所得。 \n5.1.4.1 股息、利息和特许权使用费收入所得 \n根据内地和香港税收安排第十条、第十一条、第十二条的规定，\n内地居民通过在香港设立的常设机构进行营业且取得的投资性与该\n常设机构有实际联系的，适用内地和香港税收安排的营业利润条款；\n没有设立常设机构的内地居民取得来源于香港的股息、 利息以及特许\n权使用费等投资性所得在香港可以征收预提税，但有一定的限制： \n（1）如果取得股息",
+        "level": "research_guide",
+        "applicability_note": "国别研究指南，不能代替当地正式法律"
+      }
+    ],
+    "source": "CrossTax PostgreSQL",
+    "retrieved_at": "2026-10-07"
+  },
+  "assessment": {
+    "facts": {
+      "payer": "CN",
+      "recipient": "HK",
+      "income_type": "DIVIDENDS",
+      "transaction_subtype": "corporate_dividend",
+      "date": "2026-10-07",
+      "classification_confirmed": true,
+      "beneficial_owner": null,
+      "recipient_tax_resident": true,
+      "eligibility_documents": null,
+      "principal_purpose_test_passed": true,
+      "pe_effective_connection": false,
+      "no_cn_pe_effective_connection": true,
+      "recipient_tax_resident_SG": false,
+      "china_source": true,
+      "shareholding_conditions_met": false
+    },
+    "amount": "1000000.00",
+    "currency": "CNY",
+    "tax_estimate": null,
+    "conditional_example": null,
+    "status": "facts_missing",
+    "missing_facts": [
+      "beneficial_owner",
+      "eligibility_documents",
+      "shareholding_conditions_met"
+    ],
+    "conflicts": [],
+    "formula": "amount × taxable_fraction × nominal_rate",
+    "sources": [],
+    "rule_version": null,
+    "confidence_explanation": {
+      "facts_complete": false,
+      "period_checked": false,
+      "conflicts": [],
+      "basis": "来源、适用日期、事实完整性与冲突；无模型正确概率"
+    }
+  },
+  "model_run": null
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://fgk.chinatax.gov.cn/zcfgk/c100012/c5194181/content.html",
+    "final_url": "https://fgk.chinatax.gov.cn/zcfgk/c100012/c5194181/content.html",
+    "retrieved_at": "2026-10-06T18:15:08.304837+00:00",
+    "sha256": "f344e28affc80c1db974b301b9efff94215f7133fe53fda54b2ec3c9bcb5db94",
+    "bytes": 129297,
+    "path": "research/benchmarks/_sources/f344e28affc80c1db974b301b9efff94215f7133fe53fda54b2ec3c9bcb5db94.html",
+    "http_status": 200,
+    "note": "国税发〔2010〕75号中新协定条文解释；含后续废止提示"
+  },
+  {
+    "url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/list-of-dtas-limited-dtas-and-eoi-arrangements",
+    "retrieved_at": "2026-10-06T18:14:56.393432+00:00",
+    "sha256": null,
+    "http_status": null,
+    "error": "ConnectError",
+    "note": "官方协定目录；需逐一核对协议、议定书与 MLI"
+  }
+]

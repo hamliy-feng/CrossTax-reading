@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-company/payments-that-are-subject-to-withholding-tax",
+    "retrieved_at": "2026-10-06T18:15:09.836122+00:00",
+    "sha256": null,
+    "http_status": null,
+    "error": "ConnectError",
+    "note": "官方扣缴及软件权利分类问答；新加坡付款侧说明"
+  },
+  {
+    "url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/list-of-dtas-limited-dtas-and-eoi-arrangements",
+    "retrieved_at": "2026-10-06T18:14:56.393432+00:00",
+    "sha256": null,
+    "http_status": null,
+    "error": "ConnectError",
+    "note": "官方协定目录；需逐一核对协议、议定书与 MLI"
+  }
+]

@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>CrossTax · 国际税务研究</title>
+  <style>
+    :root{--paper:#f7f7f5;--panel:#fff;--ink:#252a29;--sub:#767e7b;--light:#9ba19e;--line:#e8ebe8;--hover:#f6f8f6;--accent:#34695d;--accent-light:#e9f1ed;--bad:#a27842;--radius:9px}
+    *{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+    button,select,textarea,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #7fa59b;outline-offset:3px}
+    .viewport{min-height:100%;padding:clamp(36px,5.5vh,76px) clamp(34px,5.2vw,92px);display:flex;justify-content:center;align-items:center}
+    .workspace{width:100%;max-width:1510px;height:calc(100vh - clamp(72px,11vh,152px));min-height:610px;max-height:1030px;background:var(--panel);border:1px solid #e9eae7;border-radius:10px;display:grid;grid-template-columns:229px minmax(420px,1fr) 319px;overflow:hidden;box-shadow:0 9px 42px rgba(36,43,40,.035)}
+    .left,.right{min-height:0;display:flex;flex-direction:column}.left{border-right:1px solid var(--line);background:#fcfcfb;padding:30px 16px 22px}.right{border-left:1px solid var(--line);padding:30px 22px 22px}.main{min-width:0;min-height:0;display:flex;flex-direction:column;background:white}
+    .wordmark{font-weight:660;font-size:15px;letter-spacing:-.5px;margin:7px 11px 38px}.wordmark .mark{display:inline-block;width:8px;height:8px;border-radius:50%;background:#508c7e;margin-right:10px;vertical-align:2px}
+    .caps{font-size:10px;letter-spacing:.11em;color:var(--light);font-weight:650;text-transform:uppercase;margin:0 11px 12px}.navbtn,.case-item{appearance:none;display:flex;gap:12px;align-items:center;text-align:left;width:100%;border:0;background:transparent;border-radius:7px;color:#3b4440;padding:11px 12px;font-size:13px}.navbtn:hover,.case-item:hover{background:var(--hover)}.navbtn.primary{background:var(--accent-light);color:#2f6757;font-weight:620}.navbtn.primary:hover{background:#dcebe3}.plus{font-size:18px;font-weight:400;line-height:13px}.case-list{margin-top:4px;min-height:0;overflow:auto}.case-item{font-size:12.5px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:12px 11px;color:#646e69}.case-item[aria-current="true"]{color:#24342e;background:#f0f3f0;font-weight:580}.divider{height:1px;background:var(--line);margin:26px 11px}.left-footer{margin-top:auto;border-top:1px solid var(--line);padding:20px 11px 0;color:var(--light);font-size:11px;line-height:1.8}.left-footer strong{font-weight:500;color:#69726d}
+    .search{margin:0 8px 11px;width:calc(100% - 16px);padding:10px 11px;border-radius:7px;border:1px solid #edf0ed;background:white;color:var(--ink);font-size:12px}.search::placeholder{color:#a9afab}
+    .main-header{display:flex;justify-content:space-between;align-items:center;padding:34px 41px 27px;gap:16px}.overline{font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:#9aa19c;margin-bottom:9px}.main-title{font-size:19px;font-weight:600;letter-spacing:-.65px;margin:0}.head-status{font-size:11px;white-space:nowrap;color:#8b918d;border:1px solid #e9ebe9;padding:8px 11px;border-radius:99px}.status-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#c19d65;margin-right:7px;vertical-align:1px}
+    .stream{flex:1;min-height:0;overflow-y:auto;padding:16px 48px 20px;scrollbar-color:#e1e5e1 transparent;scrollbar-width:thin}.stream-inner{max-width:725px;margin:0 auto;min-height:100%;display:flex;flex-direction:column}.intro{margin:auto 0;padding:70px 0 55px}.intro h2{font-size:31px;letter-spacing:-1.5px;font-weight:550;margin:0 0 12px}.intro p{font-size:13px;line-height:1.9;color:var(--sub);margin:0 0 36px;max-width:450px}.suggestions{display:grid;grid-template-columns:1fr 1fr;gap:9px;max-width:560px}.suggestions button{text-align:left;border:1px solid #e8ece8;border-radius:8px;background:#fff;color:#4e5b54;font-size:12px;line-height:1.65;padding:15px 16px;transition:background .15s}.suggestions button:hover{background:#f7f9f7}
+    .message{max-width:90%;font-size:13px;line-height:1.85;white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 27px}.message.user{background:#f5f7f5;border-radius:9px;padding:15px 18px;margin-left:auto;max-width:83%;color:#323c36}.message.notice{border-left:2px solid #bdcfc4;padding:2px 0 2px 18px;color:#59645d}.msg-label{font-size:10px;letter-spacing:.07em;color:#89918a;font-weight:600;margin-bottom:6px}.msg-body{white-space:pre-wrap}
+    .composer-zone{padding:12px 44px 30px;background:#fff}.composer-wrap{max-width:725px;margin:auto}.composer{border:1px solid #dfe5df;background:#fff;border-radius:11px;box-shadow:0 4px 16px rgba(20,25,22,.025);padding:14px 16px 12px;transition:border .2s}.composer:focus-within{border-color:#a8c4b7}.composer textarea{display:block;width:100%;height:64px;min-height:64px;max-height:165px;resize:vertical;background:none;color:var(--ink);outline:0;border:0;font-size:13px;line-height:1.7;padding:1px}.composer textarea::placeholder{color:#9ba49e}.composer-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:4px}.ghost-action{border:0;background:none;color:#7f8a82;font-size:12px;padding:8px 3px}.ghost-action:hover{color:var(--accent)}.send{border:0;background:#316b5c;color:white;border-radius:7px;padding:9px 17px;font-size:12px;font-weight:600}.send:hover{background:#25594c}.hint{font-size:10px;text-align:center;color:#a5aba5;margin-top:12px;line-height:1.7}
+    .right-heading{font-size:14px;font-weight:600;letter-spacing:-.3px;margin:8px 0 24px}.tabbar{display:flex;gap:24px;border-bottom:1px solid var(--line);margin-bottom:24px}.tab{border:0;background:none;color:#959d96;font-size:12px;padding:0 0 13px;border-bottom:2px solid transparent}.tab[aria-selected="true"]{color:#2b5347;font-weight:600;border-bottom-color:#3e7767}
+    .panel-scroll{overflow:auto;min-height:0;flex:1;scrollbar-width:thin;scrollbar-color:#e1e5e1 transparent}.field{margin-bottom:21px}.field label{font-size:11px;display:block;color:#7a847c;margin-bottom:9px}.field input,.field select{width:100%;background:#fff;border:1px solid #e7eae6;border-radius:7px;color:#37443b;font-size:12px;padding:11px 12px;min-height:39px;outline:0}.field input:focus,.field select:focus{border-color:#a0c2ad}.field input::placeholder{color:#bbc2bc}.subhead{font-size:11px;font-weight:650;color:#46534a;margin-bottom:13px}.small-desc{font-size:11px;color:#89928b;line-height:1.85}.facts-note{border-top:1px solid var(--line);padding-top:20px;margin-top:22px}.save{border:1px solid #d9e8df;background:#eff6f1;color:#326451;border-radius:6px;width:100%;padding:12px 8px;font-size:12px;font-weight:600;margin-top:6px}.save:hover{background:#e5f1e8}
+    .no-evidence{font-size:12px;color:#7b847e;line-height:1.9;padding:12px 0 25px}.empty-emblem{width:36px;height:36px;border:1px solid #e6ebe6;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:17px;color:#9fa9a1;font-size:16px}.check-row{padding:15px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px;color:#49584d}.pending{font-size:10px;color:#9da59f}.right-foot{font-size:10px;color:#a0a8a1;border-top:1px solid var(--line);padding-top:18px;margin-top:18px;line-height:1.75}
+    .tool-row{margin:13px 11px 0}.text-tool{border:0;background:none;padding:8px 0;font-size:12px;color:#808982}.text-tool:hover{color:#34695d}.hidden{display:none!important}.mobile-top{display:none}
+    @media(max-width:1220px){.viewport{padding:36px 30px}.workspace{height:calc(100vh - 72px);grid-template-columns:190px minmax(340px,1fr) 284px}.left{padding:25px 12px}.right{padding:25px 17px}.main-header{padding:29px 27px 22px}.stream{padding-left:32px;padding-right:32px}.composer-zone{padding-left:28px;padding-right:28px}.intro h2{font-size:27px}}
+    @media(max-width:930px){.workspace{grid-template-columns:188px minmax(0,1fr);position:relative}.right{display:none;position:absolute;right:0;top:0;bottom:0;width:min(330px,90%);z-index:4;background:white;box-shadow:-10px 0 26px rgba(25,35,30,.08)}.right.show{display:flex}.inspector-trigger{display:inline-block!important}.stream{padding:16px 28px}.composer-zone{padding:10px 22px 22px}.intro h2{font-size:25px}}
+    @media(max-width:650px){.viewport{padding:25px 17px}.workspace{height:calc(100vh - 50px);min-height:520px;grid-template-columns:1fr}.left{display:none;position:absolute;left:0;top:0;bottom:0;z-index:5;width:230px;background:#fcfcfb;box-shadow:10px 0 30px rgba(25,35,30,.06)}.left.show{display:flex}.mobile-top{display:inline-flex!important}.main-header{padding:25px 22px 17px}.main-title{font-size:16px}.overline{font-size:9px}.head-status{display:none}.stream{padding:5px 22px 12px}.intro h2{font-size:23px}.intro{padding-top:50px}.suggestions{grid-template-columns:1fr}.composer-zone{padding:9px 16px 20px}.workspace{border-radius:7px}}
+    @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+    /* CrossTax research application shell — no corner controls */
+    .nav-section{margin:10px 0 18px}.nav-mini{color:#4f5953;font-size:12px;padding:10px 12px}.nav-mini.active{background:#edf4ee;color:#2d6754;font-weight:600}.nav-mini small{font-size:9px;margin-left:auto;color:#abb3ac}.nav-mini.pending{color:#9aa39c}.nav-mini.pending small{color:#a0a6a0}.nav-heading{font-size:10px;color:#a0a8a1;margin:13px 11px 5px;letter-spacing:.07em}
+    .mode-bar{display:flex;align-items:center;gap:6px;margin-top:15px;flex-wrap:wrap}.mode-pill{background:transparent;color:#77837a;border:1px solid #e2e8e2;padding:7px 12px;font-size:11px;border-radius:20px}.mode-pill[aria-pressed="true"]{color:#326353;background:#ebf3ed;border-color:#d2e6d9;font-weight:600}.mode-pill:hover{background:#f0f5f1}
+    .workspace-tools{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.tool-card{padding:10px 12px;border:1px solid #e5eae5;border-radius:8px;background:#fff;color:#5a6860;font-size:11px}.tool-card:hover{background:#f8faf8}.muted-label{font-size:10px;color:#a1a8a2}
+    .screen-view{padding:36px 0 20px}.screen-view h2{font-size:23px;margin:0 0 10px;font-weight:600;letter-spacing:-.4px}.screen-view p{font-size:12px;color:#7a867d;line-height:1.85}.panel-line{border:1px solid #e6ebe5;border-radius:8px;padding:17px 18px;margin:12px 0}.panel-line h3{font-size:13px;font-weight:600;margin:0 0 5px}.field-like{width:100%;border:1px solid #e4e9e4;border-radius:7px;padding:12px;color:#465349;font-size:12px;max-width:560px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}.simple-action{background:#34695d;color:#fff;padding:10px 15px;border:0;border-radius:7px;font-size:12px;margin-top:10px}.simple-action:disabled{opacity:.4;cursor:not-allowed}.secondary-action{background:#f3f6f3;border:1px solid #e4e9e4;color:#54675b;padding:9px 13px;border-radius:7px;font-size:11px}
+    .flow-trace{border:1px solid #e5e9e5;border-radius:9px;background:#fff;margin:8px 0 20px;padding:13px 15px;max-width:95%;color:#66736a}.flow-head{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:650}.flow-lines{margin-top:10px;border-top:1px solid #edf0ed;padding-top:6px}.flow-line{font-size:11px;line-height:1.7;padding:5px 0}.flow-time{color:#a1aaa2;font-size:10px;margin-right:8px}.flow-status{color:#42745f;margin-left:9px}.flow-status.warn{color:#a0784a}.flow-status.error{color:#a44e4e}.flow-reveal{border:0;background:none;color:#6d8673;font-size:10px;cursor:pointer;padding:0}
+    .model-chip{font-size:10px;color:#738178;margin-left:8px;font-weight:500}.stream-output{font-size:13px;white-space:pre-wrap;line-height:1.85;margin:13px 0 5px;color:#37443a}.pending-card{border:1px solid #e6eae5;background:#fcfdfb;border-radius:8px;padding:19px;margin:16px 0;color:#748078;font-size:12px;line-height:1.85}
+    .settings-backdrop{position:fixed;inset:0;background:rgba(23,37,30,.2);z-index:30;display:flex;align-items:center;justify-content:center;padding:28px}.settings-dialog{background:#fff;width:min(490px,95vw);padding:29px 30px 30px;border:1px solid #e4eae4;border-radius:12px;box-shadow:0 18px 70px rgba(24,35,27,.10)}.settings-dialog h2{font-size:18px;margin:0 0 7px}.settings-dialog p{font-size:11px;color:#87938a;line-height:1.8}.settings-dialog label{display:block;font-size:11px;color:#6b776e;margin:15px 0 7px}.settings-dialog input,.settings-dialog select{width:100%;border:1px solid #dfe7df;border-radius:7px;padding:11px 12px;font-size:12px;background:white;color:#2c3a31}.settings-dialog input[readonly]{background:#f8faf8;color:#79857b}.settings-footer{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}.hint-warning{color:#a47748!important}.subtle-note{font-size:10px;color:#abb3ac;line-height:1.8}
+    .nav-bottom{margin-top:auto;border-top:1px solid var(--line);padding-top:13px}.sidebar-note{font-size:10px;color:#acb2ac;margin:10px 11px 0;line-height:1.7}
+    @media(max-width:800px){.screen-view{padding:10px 0}.pair{grid-template-columns:1fr}.settings-dialog{padding:23px}.mode-bar{margin-top:12px}}
+
+    /* Full-viewport professional workbench with interior breathing room. */
+    html,body{width:100%;height:100%;overflow:hidden;background:#fff}
+    :root{--ink:#182521;--sub:#52655b;--light:#65786e;--line:#dce4de;--hover:#f0f5f1;--accent:#215b49;--accent-light:#e4eee6}
+    .viewport{width:100vw;height:100dvh;min-height:0;max-height:none;padding:0;margin:0;display:block;background:#fff}
+    .workspace{width:100%;height:100%;max-width:none;max-height:none;min-height:0;margin:0;border:0;border-radius:0;box-shadow:none;grid-template-columns:clamp(220px,16.7vw,270px) minmax(0,1fr) clamp(300px,23vw,370px)}
+    .left{padding:28px 18px 20px;background:#fcfdfb}
+    .right{padding:28px 24px 24px}
+    .main-header{padding:31px 42px 19px;align-items:center;min-height:80px}
+    .main-title{font-size:20px;font-weight:680;letter-spacing:-.3px}
+    .wordmark{margin:8px 12px 30px;color:#193e33;font-weight:700}
+    .mode-pill[aria-pressed="true"]{background:#dcebe1;color:#184b38;border-color:#bcd8c4;font-weight:700}
+    .navbtn.primary{background:#dceae1;color:#174c39;font-weight:700}
+    .navbtn,.case-item{color:#253d30;font-weight:520}
+    .caps,.nav-heading{color:#53675b;font-weight:650}
+    .send,.simple-action{background:#215d49;font-weight:680}
+    .send:hover,.simple-action:hover{background:#164833}
+    .composer-zone{padding:12px 39px 26px}
+    .stream{padding:16px 42px 12px}
+    .right-heading{color:#1c2b23;font-weight:700}
+    .field label,.subhead{color:#43594b}
+    .top-action{border:1px solid #dce4de;border-radius:8px;background:#fff;color:#254f3f;font-size:12px;font-weight:650;padding:9px 12px;min-height:34px;white-space:nowrap}
+    .top-action:hover{background:#eaf2ed;border-color:#bbd2c1}
+    .settings-action{display:inline-flex;gap:5px;align-items:center}
+    .sidebar-export{margin-top:10px;padding:0 11px}
+    .sidebar-export .text-tool{font-size:11px;color:#536b5c}
+    .left-footer,.right-foot,.overline,.head-status,.hint{display:none!important}
+    .main-header>div:first-child{flex:1}
+    .nav-bottom{margin-top:auto;padding-top:12px}
+    .left .nav-mini{font-weight:530}
+    .intro h2,.screen-view h2{color:#172820;font-weight:630}
+    .panel-line{border-color:#dce4dd}
+    @media(max-width:1220px){
+      .viewport{padding:0}.workspace{height:100dvh;grid-template-columns:195px minmax(0,1fr) 298px}
+      .main-header{padding:24px 28px 15px}.stream{padding:12px 25px}.composer-zone{padding:12px 24px 22px}
+      .left{padding:22px 12px}.right{padding:22px 16px}
+    }
+    @media(max-width:930px){.workspace{grid-template-columns:188px minmax(0,1fr)}.right{position:absolute;right:0;top:0;bottom:0;width:min(325px,90vw)}}
+    @media(max-width:650px){
+      .viewport{padding:0}.workspace{grid-template-columns:1fr;height:100dvh}
+      .left{position:absolute}.main-header{padding:21px 19px 11px;min-height:60px}
+      .stream{padding:9px 18px}.composer-zone{padding:9px 15px 15px}
+      .top-action{padding:8px 9px}.main-title{font-size:16px}
+    }
+  
+    .case-extra{border:1px solid #c9dbcf;background:#f4f8f5;border-radius:8px;padding:13px 14px;margin:18px 0 14px;font-size:11px;line-height:1.8;color:#385b47}
+    .case-extra strong{font-size:12px;color:#214d39}
+    .sensitivity{border:1px solid #d8e3da;border-radius:9px;padding:14px 16px;margin:12px 0;font-size:12px;color:#334b3a;max-width:600px}
+    .sensitivity-title{font-size:12px;font-weight:700;margin-bottom:10px;color:#214e3a}
+    .sensitivity-rows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+    .sensitivity-cell{padding:12px;background:#f2f7f3;border-radius:6px}
+    .sensitivity-cell strong{display:block;font-size:14px;margin-top:4px}
+    .sensitivity-note{font-size:10px;color:#748478;margin-top:10px}
+
+  /* Both global preferences live in the upper-right inset, never on the edge. */
+  #langToggle{position:fixed;top:18px;right:121px;z-index:22}
+  #headerSettings{position:fixed;top:18px;right:24px;z-index:22}
+  .right{padding-top:74px}
+  .right-heading{margin:3px 0 22px}
+  @media(max-width:930px){.right{padding-top:73px}}
+  @media(max-width:650px){
+    #langToggle{top:12px;right:102px}
+    #headerSettings{top:12px;right:13px}
+    .main-header{padding-top:67px}
+    .main-title{max-width:calc(100vw - 42px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  }
+
+
+  .message.assistant{max-width:100%;width:100%;border:0;background:transparent;margin-bottom:32px;padding:0;color:#24382b}
+  .markdown-output{width:100%;color:#263b2e;font-size:13px;line-height:1.8;white-space:normal;overflow-wrap:anywhere}
+  .markdown-output p{margin:0 0 12px}
+  .markdown-output h2{font-size:17px;font-weight:700;margin:26px 0 12px;letter-spacing:-.2px;color:#18392a}
+  .markdown-output h3{font-size:15px;font-weight:700;margin:20px 0 10px;color:#264e38}
+  .markdown-output h4{font-size:13px;font-weight:700;margin:16px 0 7px}
+  .markdown-output strong{font-weight:700;color:#1d3b2a}
+  .markdown-output ul,.markdown-output ol{padding-left:22px;margin:6px 0 16px}
+  .markdown-output li{margin:3px 0}
+  .markdown-output .md-table{border-collapse:collapse;width:100%;margin:16px 0 21px;font-size:12px;table-layout:auto}
+  .markdown-output .md-table td{border:1px solid #d9e3d9;padding:9px 12px;vertical-align:top;min-width:70px}
+  .markdown-output .md-table tr:first-child td{background:#eef4ef;font-weight:650;color:#284638}
+  .markdown-output pre{overflow:auto;background:#f1f5f2;border:1px solid #dfe7e0;padding:13px;border-radius:7px;font-size:11px;white-space:pre}
+  .markdown-output code{background:#f0f4f1;color:#275740;border-radius:4px;padding:1px 4px;font-size:12px}
+  .markdown-output pre code{background:transparent;padding:0}
+  .markdown-output a{color:#235f48;text-decoration:underline;text-underline-offset:3px}
+
+  .judge-status{background:#f2f7f3;border:1px solid #dce9de;border-radius:9px;padding:18px 17px;margin:18px 0 12px;font-size:12px;color:#376049;line-height:1.8}
+  .judge-status strong{font-weight:700;font-size:13px;color:#1d593c;display:block;margin-bottom:4px}
+
+  .mode-bar{align-items:center}
+  .context-indicator{margin-left:auto;color:#6d8071;font-size:11px;white-space:nowrap;padding:7px 4px;font-weight:520}
+  .conversation-row{display:flex;align-items:center;position:relative;gap:3px}
+  .conversation-row .case-item{min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .conversation-more{border:0;background:transparent;color:#889a8c;padding:9px 5px;font-size:17px;border-radius:5px;opacity:.1;min-width:24px}
+  .conversation-row:hover .conversation-more,.conversation-more:focus-visible{opacity:1}
+  .conversation-more:hover{background:#eaf1ea;color:#245740}
+  .conversation-menu{position:absolute;right:3px;top:34px;z-index:14;background:#fff;border:1px solid #d9e5da;border-radius:8px;padding:5px;box-shadow:0 8px 27px rgba(25,40,30,.1);min-width:112px;display:flex;flex-direction:column}
+  .conversation-menu button{border:0;background:transparent;color:#304d3c;text-align:left;font-size:12px;padding:9px 13px;border-radius:5px}
+  .conversation-menu button:hover{background:#edf4ee}
+  .conversation-menu button.delete{color:#a24645}
+  .connection-help{border:1px solid #e0e8e0;border-radius:9px;padding:13px 16px;background:#f6faf7;color:#456552;font-size:12px;margin-top:20px;line-height:1.8}
+  .connection-help a{color:#235e42;font-weight:650}
+  @media(max-width:650px){.context-indicator{font-size:9px}.conversation-more{opacity:1}}
+  </style>
+</head>
+<body>
+<div class="viewport">
+  <div class="workspace" id="workspace">
+    <aside class="left" id="sidebar" aria-label="案例列表">
+      <div class="wordmark"><span class="mark"></span>CrossTax</div>
+      <button class="navbtn primary" id="newCase"><span class="plus" aria-hidden="true">＋</span>新建研究</button>
+      <div class="nav-section">
+        <button class="navbtn nav-mini active" id="showMyCases">我的案例</button>
+        <button class="navbtn nav-mini" id="showLawSearch">税法检索</button>
+        <button class="navbtn nav-mini" id="showTreatyCompare">协定对照</button>
+      </div>
+      <div class="caps" id="leftRecent">最近研究</div>
+      <input class="search" id="caseSearch" placeholder="搜索案例" aria-label="搜索案例">
+      <nav class="case-list" id="caseList" aria-label="研究案例"></nav>
+      <div class="nav-bottom">
+        <div class="nav-heading" id="leftExtensions">扩展功能</div>
+        <button class="navbtn nav-mini pending" id="openOutboundChecklist">出海税务清单 <small>暂未完善</small></button>
+        <button class="navbtn nav-mini pending" id="openContractWorkbench">合同审查工作台 <small>暂未完善</small></button>
+        <button class="navbtn nav-mini pending" id="openRuleWatch">法规变更提醒 <small>暂未完善</small></button>
+        
+      </div>
+      <div class="tool-row sidebar-export"><button class="text-tool" id="exportCase" data-i18n="export">导出当前研究记录 ↗</button></div>
+    </aside>
+    <main class="main">
+      <header class="main-header">
+        <div>
+          
+          <h1 class="main-title" id="currentTitle">跨境税务研究</h1>
+        </div>
+        <div style="display:flex;align-items:center;gap:9px">
+          <button class="ghost-action mobile-top" id="showCases" style="display:none" aria-label="打开案例列表">案例</button>
+          <button class="ghost-action inspector-trigger" id="showInspector" style="display:none" aria-label="查看事实与证据">事实与证据</button>
+          <button class="top-action" id="langToggle" type="button" aria-label="Switch language">EN</button>
+          <button class="top-action settings-action" id="headerSettings" type="button" aria-label="API settings">⚙ <span data-i18n="settings">设置</span></button>
+        </div>
+      </header>
+      <div class="mode-bar" id="modeBar" style="padding:0 41px 14px">
+        <button class="mode-pill" data-mode="quick" aria-pressed="false">快速咨询</button>
+        <button class="mode-pill" data-mode="deep" aria-pressed="true">深度研究</button>
+        <button class="mode-pill" data-mode="audit" aria-pressed="false">业务审查</button>
+        <span class="context-indicator" id="contextIndicator" title="当前会话历史与模型上下文">上下文 0 条消息</span>
+      </div>
+      <div class="stream" id="stream" role="log" aria-live="polite" aria-label="研究交流内容">
+        <div class="stream-inner" id="streamInner"></div>
+      </div>
+      <div class="composer-zone">
+        <div class="composer-wrap">
+          <div class="composer">
+            <textarea id="prompt" aria-label="输入跨境税务问题" placeholder="描述你的跨境业务、交易或税务问题……"></textarea>
+            <div class="composer-actions">
+              <div>
+                <button class="ghost-action" id="attachFile" aria-label="选择本地文件">＋ 选择文件</button>
+                <input type="file" id="filePicker" class="hidden" accept=".pdf,.docx,.txt,.md" aria-label="选择文件">
+                <span class="small-desc" id="fileLabel"></span>
+              </div>
+              <button class="send" id="send">发送 ↗</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </main>
+    <aside class="right" id="inspector" aria-label="事实与证据">
+      <div class="right-heading" id="rightHeading">事实与证据</div>
+      <div class="tabbar" role="tablist" aria-label="研究辅助信息">
+        <button class="tab" id="tabFacts" role="tab" aria-selected="true">交易事实</button>
+        <button class="tab" id="tabEvidence" role="tab" aria-selected="false">法规证据</button>
+        <button class="tab" id="tabTasks" role="tab" aria-selected="false">待办</button>
+      </div>
+      <div class="panel-scroll">
+        <section id="factsPanel" role="tabpanel" aria-labelledby="tabFacts">
+          <div class="subhead" id="rightBasic">基本情况</div>
+          <div class="field"><label for="payer" id="payerLabel">付款方所在司法辖区</label><input id="payer" autocomplete="off" placeholder="如：中国"></div>
+          <div class="field"><label for="payee" id="payeeLabel">收款方所在司法辖区</label><input id="payee" autocomplete="off" placeholder="如：新加坡"></div>
+          <div class="field"><label for="income" id="incomeLabel">所得或交易类别</label>
+            <select id="income"><option value="">请选择</option><option>服务费</option><option>股息</option><option>利息</option><option>特许权使用费</option><option>雇佣所得</option><option>资本利得</option><option>其他 / 待分类</option></select>
+          </div>
+          <div class="field"><label for="eventDate" id="eventDateLabel">交易发生日期</label><input id="eventDate" type="date"></div>
+          <div class="field"><label for="place" id="placeLabel">实际履行或经营地点</label><input id="place" autocomplete="off" placeholder="未确定可留空"></div>
+          <button class="save" id="saveFacts">保存当前事实</button>
+          <div id="caseExtra" class="case-extra hidden" aria-live="polite"></div>
+          <div class="facts-note">
+            <div class="subhead" id="rightSubheading">完整性提示</div>
+            <div class="small-desc" id="factsHint">请补充交易事实。保存不等于税务事实已验证。</div>
+          </div>
+        </section>
+        <section class="hidden" id="evidencePanel" role="tabpanel" aria-labelledby="tabEvidence">
+          <div class="empty-emblem" aria-hidden="true">⌁</div>
+          <div class="subhead" id="evidenceTitle">尚无已验证的法规证据</div>
+          <div class="no-evidence" id="evidenceNote">当前案例尚无可显示的法规引用。</div>
+          <div class="check-row"><span>官方法规检索</span><span class="pending">待连接</span></div>
+          <div class="check-row"><span>协定版本核验</span><span class="pending">待连接</span></div>
+          <div class="check-row"><span>规则执行结果</span><span class="pending">待连接</span></div>
+          <div class="check-row"><span>引用与原文定位</span><span class="pending">待连接</span></div>
+        </section>
+        <section class="hidden" id="tasksPanel" role="tabpanel" aria-labelledby="tabTasks">
+          <div class="subhead">研究与合规待办</div>
+          <div class="pending-card">合规事项清单与申报提醒仍在建设。本页不会根据未经核验的法规自动生成法定义务。</div>
+          <button class="secondary-action" id="taskPlaceholder">查看功能边界</button>
+        </section>
+      </div>
+      
+    </aside>
+  </div>
+</div>
+<div id="settingsModal" class="settings-backdrop hidden" role="presentation">
+  <div class="settings-dialog" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <h2 id="settingsTitle">API 服务设置</h2>
+    <p id="settingsInfo">默认使用 DeepSeek，也可选择其他厂商或填写自己的 Key。</p>
+    <div id="judgeStatus" class="hidden" aria-hidden="true"></div>
+    <div id="providerSettingsForm">
+    <label for="providerSelect" id="settingsProviderLabel">模型服务商</label><select id="providerSelect"></select>
+    <label for="providerBase" id="settingsBaseLabel">官方 API Base URL</label><input id="providerBase" readonly>
+    <label for="providerModel" id="settingsModelLabel">模型 ID（按账号权限可修改）</label><input id="providerModel" spellcheck="false">
+    <label for="providerKey" id="settingsKeyLabel">API Key（可留空使用已有配置）</label><input id="providerKey" type="password" placeholder="仅本机输入，不会写入项目文件" autocomplete="new-password">
+    </div>
+    <p id="settingsState" role="status">等待本地服务……</p>
+    <div class="settings-footer">
+      <button class="secondary-action" id="closeSettings">取消</button>
+      <button class="simple-action" id="saveSettings">保存并切换</button>
+    </div>
+    <p class="subtle-note" id="settingsFooterNote">厂商与模型的兼容能力会更新。未配置密钥时不会调用远端 API；深度研究所需的法律证据工具仍需独立接入。</p>
+  </div>
+</div>
+<style>
+  .wb-dialog{width:min(760px,calc(100vw - 32px));max-height:85vh;overflow:auto;border:1px solid #d8e4d9;border-radius:14px;padding:24px;color:#254b36;background:#fbfdfb;font:14px/1.5 system-ui}
+  .wb-dialog::backdrop{background:rgba(10,35,22,.35)}
+  .wb-dialog h2{font-size:20px;font-weight:600;margin:0 0 16px}
+  .wb-dialog-body{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+  .wb-dialog-body input.search,.wb-dialog-body textarea.search{box-sizing:border-box;width:100%;margin:0}
+  .wb-dialog textarea{min-height:120px;resize:vertical}
+  .wb-toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:8px 0}
+  .wb-toolbar button{font-size:12px;padding:4px 8px;min-height:28px}
+  .mode-bar{flex-wrap:wrap}
+  .mode-bar .wb-toolbar{width:100%;margin:8px 0 0}
+  .wb-file-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .wb-file-row input[type=checkbox],.wb-check{width:16px;height:16px;accent-color:#245e40;flex:none}
+  .wb-file-row span{flex:1;min-width:80px}
+  .wb-projects{padding-bottom:12px;border-bottom:1px solid #deeadf;margin-bottom:12px}
+  .wb-tools,.wb-summary{border:1px solid #dbe6dc;border-radius:8px;padding:12px;margin-top:12px}
+  .wb-tools summary,.wb-summary summary{cursor:pointer;font-size:14px}
+  .wb-source{padding:12px;margin:12px 0;border:1px solid #e2eae3;border-radius:8px;overflow-wrap:anywhere}
+  .wb-source p{font-size:14px;line-height:1.6;white-space:pre-wrap}
+  .wb-source a,.wb-file-row a,.wb-summary a{color:#235f48;margin-left:8px}
+  .wb-result{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;background:#f1f6f2;padding:16px;border-radius:8px}
+  .wb-branch{max-width:120px;border:1px solid #dce7dd;border-radius:8px;padding:4px;background:white;color:#315440}
+  .wb-recommendations{display:flex;gap:8px;flex-direction:column;margin:16px 0}
+</style>
+<script src="./workbench-extension.js" defer></script>
+<script src="./app.js" defer></script>
+</body>
+</html>

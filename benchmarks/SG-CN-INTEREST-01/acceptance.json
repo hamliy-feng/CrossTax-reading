@@ -1,0 +1,16 @@
+{
+  "case_id": "SG-CN-INTEREST-01",
+  "case_type": "constructed_test",
+  "program_checks": {
+    "no_unpublished_tax_amount": true,
+    "real_legal_query_has_hits": true,
+    "expected_missing_fact": true,
+    "pe_exception": true
+  },
+  "program_pass": true,
+  "sources_archived": false,
+  "legal_applicability_review": "pending",
+  "independent_model_checks": "pending",
+  "professional_verdict": "not_performed",
+  "recorded_at": "2026-10-06T18:15:56.033309+00:00"
+}

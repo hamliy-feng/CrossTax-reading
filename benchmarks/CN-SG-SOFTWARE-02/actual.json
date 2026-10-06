@@ -1,0 +1,121 @@
+{
+  "code_base_commit": "84dab85cbb41b853bf3c60b855909beafd39a565",
+  "new_code_sha256": "fc4e4a34bc866eff6c9b11a1aca86e624470bda3ba8c7d46b016cabaa3b3f714",
+  "recorded_at": "2026-10-06T18:15:55.145811+00:00",
+  "input": {
+    "facts": {
+      "payer": "CN",
+      "recipient": "SG",
+      "income_type": "ROYALTIES",
+      "transaction_subtype": "copyright_software_license",
+      "date": "2026-10-07",
+      "classification_confirmed": null,
+      "beneficial_owner": true,
+      "recipient_tax_resident": true,
+      "eligibility_documents": true,
+      "principal_purpose_test_passed": true,
+      "pe_effective_connection": false,
+      "no_cn_pe_effective_connection": true,
+      "recipient_tax_resident_SG": true,
+      "china_source": true,
+      "shareholding_conditions_met": true,
+      "rights_transferred": null
+    },
+    "amount": "1000000.00",
+    "currency": "CNY"
+  },
+  "legal_search": {
+    "query": "软件",
+    "results": [
+      {
+        "id": "guide-SG-30-1",
+        "official_title": "新加坡投资税收指南",
+        "original_url": "https://www.chinatax.gov.cn/chinatax/c103103/c2582367/5246404/files/ae270d57027f412e8ac7029185e944c9.pdf",
+        "page_num": 30,
+        "source_locator": "sha256:66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445#page=30;part=1",
+        "original_sha256": "66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445",
+        "chunk_sha256": "cebf9f002850dbb0e7c45d765d02f04aac3ce9e5138008f7d3fa722694ccbbbc",
+        "excerpt": "中国居民赴新加坡共和国投资税收指南\n22\n权，相关知识产权收入可享受 IDI 优惠。IDI 优惠下将按照 5%、10%\n或15%的优惠税率对企业在激励期内获得的部分合格知识产权收入计\n征税款。合格知识产权收入是指经批准的 IDI 公司对合格知识产权\n（即软件中存续的专利和版权）进行商业开发而收取的特许权使用\n费或其他收入。该优惠结合了税基侵蚀和利润转移–修正关联方法。\n该优惠已于 2018 年 7 月 1 日生效，有效期至 2028 年 12 月 31 日。\n（8）针对处置股票资产产生的资本利得的税收确定性：为保障\n税收确定性，在 2012 年 6 月 1 日至 2027 年 12 月 31 ",
+        "level": "research_guide",
+        "applicability_note": "国别研究指南，不能代替当地正式法律"
+      },
+      {
+        "id": "guide-SG-46-1",
+        "official_title": "新加坡投资税收指南",
+        "original_url": "https://www.chinatax.gov.cn/chinatax/c103103/c2582367/5246404/files/ae270d57027f412e8ac7029185e944c9.pdf",
+        "page_num": 46,
+        "source_locator": "sha256:66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445#page=46;part=1",
+        "original_sha256": "66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445",
+        "chunk_sha256": "ef9cde64553562b4e4c787951d9389b0e9579f3d5972a63e8387a8518c1bfd31",
+        "excerpt": "中国居民赴新加坡共和国投资税收指南\n38\n年 12 月 31 日）向未在新加坡设立常设机构的非居民企业发行的债\n券的利息免征预提所得税。这项免税政策同样适用于在新加坡设立\n了常设机构、但并未使用其运营常设机构获得的资金来购买该债券\n的非居民企业。由新加坡境外的非居民企业进行的与贷款或债务有\n关的安排、管理和服务的支付，及由非居民担保公司提供的贷款或\n债务免征预提所得税。在 2012 年 2 月 17 日至 2026 年 12 月 31 日期\n间，银行、金融企业和经核准的特定实体向非居民个人支付的利息\n和其他款项免征预提所得税，前提为该支付的目的是出于贸易或经\n营活动而非规避在新加坡的税收。\n以",
+        "level": "research_guide",
+        "applicability_note": "国别研究指南，不能代替当地正式法律"
+      },
+      {
+        "id": "guide-SG-65-1",
+        "official_title": "新加坡投资税收指南",
+        "original_url": "https://www.chinatax.gov.cn/chinatax/c103103/c2582367/5246404/files/ae270d57027f412e8ac7029185e944c9.pdf",
+        "page_num": 65,
+        "source_locator": "sha256:66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445#page=65;part=1",
+        "original_sha256": "66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445",
+        "chunk_sha256": "6815b496b90d27230d154e7290cdb05aa6ef440c6a2aedb622344942d10da59c",
+        "excerpt": "中国居民赴新加坡共和国投资税收指南\n57\n（9）国内反向征收机制\n自 2019 年 1 月 1 日起，对货物和劳务税注册供应商向货物和劳\n务税注册客户本地销售特定商品的情况，若单张发票的货物和劳务\n税含税销售额超过 10,000 新元，则需对该交易进行反向征税。所指\n的特定商品包含手机、存储卡和现成软件。该方法称为“客户代收”\n（Customer Accounting），指供应商负责开具货物和劳务税发票\n（显示货物和劳务税应纳税额），客户负责代收货物和劳务税销项\n税并交给新加坡税务局。\n（10）数字经济\n从 2020 年 1 月 1 日起，对海外供应商向新加坡非货物和劳务税\n注册消费者提供 B",
+        "level": "research_guide",
+        "applicability_note": "国别研究指南，不能代替当地正式法律"
+      },
+      {
+        "id": "guide-SG-160-1",
+        "official_title": "新加坡投资税收指南",
+        "original_url": "https://www.chinatax.gov.cn/chinatax/c103103/c2582367/5246404/files/ae270d57027f412e8ac7029185e944c9.pdf",
+        "page_num": 160,
+        "source_locator": "sha256:66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445#page=160;part=1",
+        "original_sha256": "66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445",
+        "chunk_sha256": "33b3f1da80a3ec6c2656b6855dea95e15496b291e7fe98907e2a6d15df4b677e",
+        "excerpt": "中国居民赴新加坡共和国投资税收指南\n152\n所得税税率将降至 10%（或在某些特定情况下免税）。\n（w）表示这一税率也适用于使用工业、商业或科学设备而支付的款项，其中包括货物\n运输的运输车辆。\n（x）表示依据支付款项的性质适用三层税率。\n（y）表示 5%的税率适用于为使用或有权使用文学、艺术或科学作品(包括电影、电影\n或用于广播或电视广播的电影或磁带)而支付的费用。如果特许权使用费是用于使用或有权\n使用专利、商标、设计或模型、图纸、秘密配方或程序、工业、商业或科学设备，则税率\n为 8%。\n（z）表示协议自 2021年 12 月 3 日开始实行，且自 2022 年 1 月 1 日起正式生效。\n（",
+        "level": "research_guide",
+        "applicability_note": "国别研究指南，不能代替当地正式法律"
+      }
+    ],
+    "source": "CrossTax PostgreSQL",
+    "retrieved_at": "2026-10-07"
+  },
+  "assessment": {
+    "facts": {
+      "payer": "CN",
+      "recipient": "SG",
+      "income_type": "ROYALTIES",
+      "transaction_subtype": "copyright_software_license",
+      "date": "2026-10-07",
+      "classification_confirmed": null,
+      "beneficial_owner": true,
+      "recipient_tax_resident": true,
+      "eligibility_documents": true,
+      "principal_purpose_test_passed": true,
+      "pe_effective_connection": false,
+      "no_cn_pe_effective_connection": true,
+      "recipient_tax_resident_SG": true,
+      "china_source": true,
+      "shareholding_conditions_met": true,
+      "rights_transferred": null
+    },
+    "amount": "1000000.00",
+    "currency": "CNY",
+    "tax_estimate": null,
+    "conditional_example": null,
+    "status": "facts_missing",
+    "missing_facts": [
+      "classification_confirmed"
+    ],
+    "conflicts": [],
+    "formula": "amount × taxable_fraction × nominal_rate",
+    "sources": [],
+    "rule_version": null,
+    "confidence_explanation": {
+      "facts_complete": false,
+      "period_checked": false,
+      "conflicts": [],
+      "basis": "来源、适用日期、事实完整性与冲突；无模型正确概率"
+    }
+  },
+  "model_run": null
+}

@@ -1,0 +1,680 @@
+[
+  {
+    "path": ".gitignore",
+    "sha256": "a4bc7e7f9bf01db6fa05a3aaa92024cdf82332c7ee3ad1f5c8e974ad68b329c9",
+    "bytes": 58,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/.gitignore"
+  },
+  {
+    "path": "ALL_CONTEXT.md",
+    "sha256": "1058cda8c3983b9daa16bba64b56df6c8f7320704ed9c1d72b6ecc4c79edceff",
+    "bytes": 27382,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/ALL_CONTEXT.md"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-01/acceptance.json",
+    "sha256": "20923c646204960eb600bb208c2581d1c2cc8267bff226d6521cc4179805efa0",
+    "bytes": 486,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-01/acceptance.json"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-01/actual.json",
+    "sha256": "233d7ce4db0098824f3a39302831a1c2b63a4767d487104d87e4f6ab3edd5b8d",
+    "bytes": 8303,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-01/actual.json"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-01/analysis.md",
+    "sha256": "23226018e0ecbeec1fa253cf291a482719996159265ad593e0f63df58296baf9",
+    "bytes": 831,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-01/analysis.md"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-01/case.md",
+    "sha256": "9b68385b44f68db79b4d835ab78655bf5038e282845fec019b1362d7bcf43451",
+    "bytes": 519,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-01/case.md"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-01/evidence.json",
+    "sha256": "14cc47b82adfeed2f1cca2fb20bf4183b4aeadf15448fb1446d07db7019ea7c7",
+    "bytes": 5933,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-01/evidence.json"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-01/expected.json",
+    "sha256": "7361057fcf3c34eac3a0d1b23123079d8c4ec923d4c4c4d0728d214054a916a6",
+    "bytes": 232,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-01/expected.json"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-01/facts.json",
+    "sha256": "299cea54cdbb362f3b1f16a3d13eff718aabb1c24d1d4f6e2027853b3796d654",
+    "bytes": 509,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-01/facts.json"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-01/sources.json",
+    "sha256": "4d3dd0c106dd0eb3bd72aabc96fe8f69fd71367736424e063b4e3f0fc8b95f56",
+    "bytes": 603,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-01/sources.json"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-02/acceptance.json",
+    "sha256": "232fcbf356db3a188a33a42506257b62598e991db8fe96eb66358ed91f42d8d2",
+    "bytes": 486,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-02/acceptance.json"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-02/actual.json",
+    "sha256": "f5609d893d85094f7802a5aa135aaeff52aae8a80857de946047cdfe3f8f5b44",
+    "bytes": 8403,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-02/actual.json"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-02/analysis.md",
+    "sha256": "23226018e0ecbeec1fa253cf291a482719996159265ad593e0f63df58296baf9",
+    "bytes": 831,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-02/analysis.md"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-02/case.md",
+    "sha256": "72ac7d4b747fd9c0181f93707d1afc1cce3b1fde37e1dd6956e20233e655c9ac",
+    "bytes": 504,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-02/case.md"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-02/evidence.json",
+    "sha256": "14cc47b82adfeed2f1cca2fb20bf4183b4aeadf15448fb1446d07db7019ea7c7",
+    "bytes": 5933,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-02/evidence.json"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-02/expected.json",
+    "sha256": "da2f4c2f8761dbb4b06e712aa1d6f6b674c03dd78d9a544295e0d380ed463a82",
+    "bytes": 257,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-02/expected.json"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-02/facts.json",
+    "sha256": "f3d82f1cf41bcfcc1c57e1d42ac2f93aad267d6f116ffff9c5a1e6704bde9dcb",
+    "bytes": 510,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-02/facts.json"
+  },
+  {
+    "path": "benchmarks/CN-HK-DIVIDEND-02/sources.json",
+    "sha256": "4d3dd0c106dd0eb3bd72aabc96fe8f69fd71367736424e063b4e3f0fc8b95f56",
+    "bytes": 603,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-HK-DIVIDEND-02/sources.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-01/acceptance.json",
+    "sha256": "29e8e8469019cc651a9165eaf2522f35a12d41ff569774f15fe6054df012e93d",
+    "bytes": 483,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-01/acceptance.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-01/actual.json",
+    "sha256": "8552793339066622a3bee59f85b9e35e059c0fc91112c173f16eefc758775125",
+    "bytes": 8315,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-01/actual.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-01/analysis.md",
+    "sha256": "23226018e0ecbeec1fa253cf291a482719996159265ad593e0f63df58296baf9",
+    "bytes": 831,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-01/analysis.md"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-01/case.md",
+    "sha256": "504ecc4bb54b6658141a2d768bfe7db201e30b1ce6408271be029226d1b74b02",
+    "bytes": 528,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-01/case.md"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-01/evidence.json",
+    "sha256": "b0934510a08763bcaed393bfd67cc0b25344b1905e6522a33e376c4930a0c24c",
+    "bytes": 5896,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-01/evidence.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-01/expected.json",
+    "sha256": "7361057fcf3c34eac3a0d1b23123079d8c4ec923d4c4c4d0728d214054a916a6",
+    "bytes": 232,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-01/expected.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-01/facts.json",
+    "sha256": "c54201057462a478da4f2ed628b255da58613a3c17b54cbf801132eac411abc6",
+    "bytes": 532,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-01/facts.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-01/sources.json",
+    "sha256": "1c52f786abff07527b95e68b084a1fd1b490b5d7167e376a7fe29e4caee38ba3",
+    "bytes": 954,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-01/sources.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-02/acceptance.json",
+    "sha256": "46bd6d219ba39ab110f50374ac8c3f8fb4fa68e7a868ea9ed4f9a70e06099032",
+    "bytes": 483,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-02/acceptance.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-02/actual.json",
+    "sha256": "680799cfcbd560d9379b199dd83bc6fd987578d2c31cf3c6ab108e6d162276eb",
+    "bytes": 8325,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-02/actual.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-02/analysis.md",
+    "sha256": "23226018e0ecbeec1fa253cf291a482719996159265ad593e0f63df58296baf9",
+    "bytes": 831,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-02/analysis.md"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-02/case.md",
+    "sha256": "3badd09f11ab43ab33d1790411c0952a01135e4121dc86029886ca997acf9105",
+    "bytes": 528,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-02/case.md"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-02/evidence.json",
+    "sha256": "b0934510a08763bcaed393bfd67cc0b25344b1905e6522a33e376c4930a0c24c",
+    "bytes": 5896,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-02/evidence.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-02/expected.json",
+    "sha256": "d608e92ecf3d0442b5f8123db33030f4bde7c7bfdfc60c6ffa106a69a4dbe994",
+    "bytes": 254,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-02/expected.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-02/facts.json",
+    "sha256": "737b8ae9367b1024441196296ccda57fc546ea2473fb60151f4387a70fe24e96",
+    "bytes": 519,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-02/facts.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-EQUIP-02/sources.json",
+    "sha256": "1c52f786abff07527b95e68b084a1fd1b490b5d7167e376a7fe29e4caee38ba3",
+    "bytes": 954,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-EQUIP-02/sources.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-01/acceptance.json",
+    "sha256": "d85ad23c38a507f87f91c3180de4c1ece7f1b3142735e9bdb57a0ae2c70cef0f",
+    "bytes": 486,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-01/acceptance.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-01/actual.json",
+    "sha256": "3d1d1757995ab8cc170fe99a18a524e86988692d91116656610b36429221553f",
+    "bytes": 8197,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-01/actual.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-01/analysis.md",
+    "sha256": "23226018e0ecbeec1fa253cf291a482719996159265ad593e0f63df58296baf9",
+    "bytes": 831,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-01/analysis.md"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-01/case.md",
+    "sha256": "7ab0be66647c5d36951d59ea12605a4089d8e0ba42fc9349537c0c7b9f607bdb",
+    "bytes": 531,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-01/case.md"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-01/evidence.json",
+    "sha256": "d4ad1a5c483430b11fe587342f49f52639c606edbad4f1c5b583e4d8f99a2314",
+    "bytes": 5813,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-01/evidence.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-01/expected.json",
+    "sha256": "7361057fcf3c34eac3a0d1b23123079d8c4ec923d4c4c4d0728d214054a916a6",
+    "bytes": 232,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-01/expected.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-01/facts.json",
+    "sha256": "4abaf698bbd031cf1e377f238c5c738b23848752ae6efe80e6865e8361d5a835",
+    "bytes": 516,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-01/facts.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-01/sources.json",
+    "sha256": "c7201b80c8523522fda2fc17b42f3d60fc058eff15d317e221739aae60c41ae2",
+    "bytes": 936,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-01/sources.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-02/acceptance.json",
+    "sha256": "7308f554154fb8ae022532561f262ff79566a481110279ab7f6e97160d11bac9",
+    "bytes": 486,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-02/acceptance.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-02/actual.json",
+    "sha256": "2dc7fbe31ac0a99cf473aa2f88d74c1e4d7ebc4e0e54b7d03cd08239ab2a5f6c",
+    "bytes": 8303,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-02/actual.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-02/analysis.md",
+    "sha256": "23226018e0ecbeec1fa253cf291a482719996159265ad593e0f63df58296baf9",
+    "bytes": 831,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-02/analysis.md"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-02/case.md",
+    "sha256": "1b17de690d033938456ca2fa0293b8e6d59fdf9af5b37fcc42e4f8aaaf6f64b5",
+    "bytes": 512,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-02/case.md"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-02/evidence.json",
+    "sha256": "d4ad1a5c483430b11fe587342f49f52639c606edbad4f1c5b583e4d8f99a2314",
+    "bytes": 5813,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-02/evidence.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-02/expected.json",
+    "sha256": "d608e92ecf3d0442b5f8123db33030f4bde7c7bfdfc60c6ffa106a69a4dbe994",
+    "bytes": 254,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-02/expected.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-02/facts.json",
+    "sha256": "04c55fecf83a6db60e7d0080b5c49439e340ccaf9e2badfe733cfc192dde1480",
+    "bytes": 547,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-02/facts.json"
+  },
+  {
+    "path": "benchmarks/CN-SG-SOFTWARE-02/sources.json",
+    "sha256": "c7201b80c8523522fda2fc17b42f3d60fc058eff15d317e221739aae60c41ae2",
+    "bytes": 936,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/CN-SG-SOFTWARE-02/sources.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-01/acceptance.json",
+    "sha256": "c414300bda9c71c42a36a76473231ad856bad63c1a3f634b932a9b76d04138d9",
+    "bytes": 486,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-01/acceptance.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-01/actual.json",
+    "sha256": "15d0e6329f35dc468610a78c4a6184d5eeef2dc69e432b3e9ddd7691d04e293b",
+    "bytes": 8318,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-01/actual.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-01/analysis.md",
+    "sha256": "cf79c59a2620ded335d62a0ec5e0fc9778011eafb9af6602c53787870d1d76ab",
+    "bytes": 943,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-01/analysis.md"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-01/case.md",
+    "sha256": "3fa7ce46b4fe2f9e17c5d9fa4e119aec36eb741350871af38124bc50df05b42d",
+    "bytes": 522,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-01/case.md"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-01/evidence.json",
+    "sha256": "f8de0fa8306966c833b3202461d18aaae3df41427f55fc487ba36afca5a9ad22",
+    "bytes": 5946,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-01/evidence.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-01/expected.json",
+    "sha256": "7361057fcf3c34eac3a0d1b23123079d8c4ec923d4c4c4d0728d214054a916a6",
+    "bytes": 232,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-01/expected.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-01/facts.json",
+    "sha256": "899f75b820d733c91eb28c24197d5e293b89a8670df7367c8008396ce44c7d32",
+    "bytes": 510,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-01/facts.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-01/sources.json",
+    "sha256": "72ff7eb4b3f0395bac3122bd896e8e1236af0831275f0d0384fab2640d346717",
+    "bytes": 756,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-01/sources.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-02/acceptance.json",
+    "sha256": "d36a408ea05b85526879ed6da24848ef3d4c4c41c6495339d90d58e712bf698e",
+    "bytes": 486,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-02/acceptance.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-02/actual.json",
+    "sha256": "01a7b573783cf379e9788c94b462e15d033de0d1445d584fb9bd78c654dfeab5",
+    "bytes": 8384,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-02/actual.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-02/analysis.md",
+    "sha256": "cf79c59a2620ded335d62a0ec5e0fc9778011eafb9af6602c53787870d1d76ab",
+    "bytes": 943,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-02/analysis.md"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-02/case.md",
+    "sha256": "00021739a368a037bfb28d530bc67d9a27e5d4cf9627fee9df7d1eaf84b7f91e",
+    "bytes": 525,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-02/case.md"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-02/evidence.json",
+    "sha256": "f8de0fa8306966c833b3202461d18aaae3df41427f55fc487ba36afca5a9ad22",
+    "bytes": 5946,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-02/evidence.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-02/expected.json",
+    "sha256": "89bad7548543f0ea4500101ac701ac8a04522c430ded264cb8b1dc916a65de5c",
+    "bytes": 252,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-02/expected.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-02/facts.json",
+    "sha256": "71f2358ae990357a6879c3b2ad7dbefe1261d15175acec364b065e11904859b1",
+    "bytes": 510,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-02/facts.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-DIVIDEND-02/sources.json",
+    "sha256": "72ff7eb4b3f0395bac3122bd896e8e1236af0831275f0d0384fab2640d346717",
+    "bytes": 756,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-DIVIDEND-02/sources.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-01/acceptance.json",
+    "sha256": "f9e21531138e88f4b9c62d28415aa66ded0b30717bda3782036f5813aff51b5d",
+    "bytes": 486,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-01/acceptance.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-01/actual.json",
+    "sha256": "9611675868540a005f7e0718e0642dcc02bdaa38289c86739c4106b703b24923",
+    "bytes": 8277,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-01/actual.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-01/analysis.md",
+    "sha256": "23226018e0ecbeec1fa253cf291a482719996159265ad593e0f63df58296baf9",
+    "bytes": 831,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-01/analysis.md"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-01/case.md",
+    "sha256": "9835a9ff397763ab187e4049c9ed183b0ebba7d4d61d145e6b97f2f27b2c7d68",
+    "bytes": 522,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-01/case.md"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-01/evidence.json",
+    "sha256": "ee4f94e733628b9116d672e08285ba880d0477e78fb9215c98daaf003a1c7b67",
+    "bytes": 5917,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-01/evidence.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-01/expected.json",
+    "sha256": "7361057fcf3c34eac3a0d1b23123079d8c4ec923d4c4c4d0728d214054a916a6",
+    "bytes": 232,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-01/expected.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-01/facts.json",
+    "sha256": "f0949436c6dd9ff899754d1224b5dd29333be95d365dc121e886c8a5c1dc53a5",
+    "bytes": 504,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-01/facts.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-01/sources.json",
+    "sha256": "e92bb29ba32989cba486bbc641e99bce37f9bfa2ec04ef5206407a297707ab79",
+    "bytes": 755,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-01/sources.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-02/acceptance.json",
+    "sha256": "694964683971f466af473e0e565eaf63fb3d46cacca4cb0a77e42c6869633c8b",
+    "bytes": 486,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-02/acceptance.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-02/actual.json",
+    "sha256": "7e84c5b3b17f7f78bd215276b1e5086bd65ccd5a2d1b6066c09474a6ab6a454b",
+    "bytes": 8478,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-02/actual.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-02/analysis.md",
+    "sha256": "23226018e0ecbeec1fa253cf291a482719996159265ad593e0f63df58296baf9",
+    "bytes": 831,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-02/analysis.md"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-02/case.md",
+    "sha256": "35b06b1a06943bce1dd7bf22ee2faeb2380aef30309227356af3200f366d649f",
+    "bytes": 525,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-02/case.md"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-02/evidence.json",
+    "sha256": "ee4f94e733628b9116d672e08285ba880d0477e78fb9215c98daaf003a1c7b67",
+    "bytes": 5917,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-02/evidence.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-02/expected.json",
+    "sha256": "7fee4b07898c18ac68c51331fe50935b84a2bae87970c31beb2e9473eaa3f269",
+    "bytes": 231,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-02/expected.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-02/facts.json",
+    "sha256": "087d2e8b7b975f14d5cda693aa0d607b72ad6e5d2a90cc7d5d09903e2fecee06",
+    "bytes": 504,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-02/facts.json"
+  },
+  {
+    "path": "benchmarks/SG-CN-INTEREST-02/sources.json",
+    "sha256": "e92bb29ba32989cba486bbc641e99bce37f9bfa2ec04ef5206407a297707ab79",
+    "bytes": 755,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/benchmarks/SG-CN-INTEREST-02/sources.json"
+  },
+  {
+    "path": "code/render.yaml",
+    "sha256": "2e14b559e14ad9b299369a786f8775be0c1ab57b9a7f729e167369a4251e2665",
+    "bytes": 978,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/render.yaml"
+  },
+  {
+    "path": "code/requirements.txt",
+    "sha256": "f33bf914129c24798c14d2582279ee79d5da9d1207f1b50daa2e755dccfbc5d2",
+    "bytes": 238,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/requirements.txt"
+  },
+  {
+    "path": "code/scripts/answer_from_unified_tax_evidence.py",
+    "sha256": "6f02ac48f2f774c7c7d64b88ace3ded6b4f3e90aa5404b67983945328dab15ec",
+    "bytes": 11317,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/scripts/answer_from_unified_tax_evidence.py"
+  },
+  {
+    "path": "code/scripts/build_first_benchmarks.py",
+    "sha256": "990aacc9ea6ab6b383971eaf4b1a907cebe592519a4bf9a61c327269c8fc3162",
+    "bytes": 9911,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/scripts/build_first_benchmarks.py"
+  },
+  {
+    "path": "code/scripts/query_legal_citations.py",
+    "sha256": "11bf9d1dc1dd15cab98ea20ad2f742153da8e2a79ab9a30b8c07e538d44d360e",
+    "bytes": 3112,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/scripts/query_legal_citations.py"
+  },
+  {
+    "path": "code/web/app.js",
+    "sha256": "c66b19072642db26131622e05b657e580efc5dc04024f5fe11ae85c8c90a2d4e",
+    "bytes": 44849,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/app.js"
+  },
+  {
+    "path": "code/web/chat_store.py",
+    "sha256": "99122d1cc621a2725935307e8d8a191017392f615d71d153e55f1d025529d8e0",
+    "bytes": 8037,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/chat_store.py"
+  },
+  {
+    "path": "code/web/file_service.py",
+    "sha256": "6f3609f764ac902d7b4b2f8bf041a19f10c2f5bbf5dec5bea1a03f7352ff58a5",
+    "bytes": 3329,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/file_service.py"
+  },
+  {
+    "path": "code/web/index.html",
+    "sha256": "b43640a958f664d4db483856be75fc6055954b9183912d135bd2d1545ac3ee96",
+    "bytes": 31666,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/index.html"
+  },
+  {
+    "path": "code/web/legal_service.py",
+    "sha256": "fc4e4a34bc866eff6c9b11a1aca86e624470bda3ba8c7d46b016cabaa3b3f714",
+    "bytes": 8560,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/legal_service.py"
+  },
+  {
+    "path": "code/web/model_client.py",
+    "sha256": "d2e63952f6a0173a7bfcf30144f2c3d70709a42bf6b2931b8dc9e263f56750c7",
+    "bytes": 2679,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/model_client.py"
+  },
+  {
+    "path": "code/web/server.py",
+    "sha256": "43c5d6cd4628238b87c04ca35d2e524f28f8d2c14aacb5d651498327c579d30f",
+    "bytes": 23470,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/server.py"
+  },
+  {
+    "path": "code/web/test_workbench.py",
+    "sha256": "93cfd9a9e6a87838a29d97761bc4bc7dce427015a21cbff12497b2ed5ce52c0b",
+    "bytes": 14094,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/test_workbench.py"
+  },
+  {
+    "path": "code/web/workbench-extension.js",
+    "sha256": "cbd7c76f33a46ecfbdac74d6afb490b206f558afe1eccbbf234f262e14cbaabe",
+    "bytes": 22181,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/workbench-extension.js"
+  },
+  {
+    "path": "code/web/workbench.py",
+    "sha256": "1e171f124a42ba1df4bdc2dbf7c1286d6a4fb57767654d2956fb1d75c944a511",
+    "bytes": 39372,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/workbench.py"
+  },
+  {
+    "path": "code/web/workspace_store.py",
+    "sha256": "42c11f68db0a5c3742bab6a8057d745268acb5bcd8e79c87dd330ebb4d2d410f",
+    "bytes": 10219,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/code/web/workspace_store.py"
+  },
+  {
+    "path": "guides/00_阅读入口.md",
+    "sha256": "fe6733dd6ac593c50dc8416dc4a55ad2a6bca0fc055c771bc97a4391a74d5019",
+    "bytes": 4204,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/guides/00_阅读入口.md"
+  },
+  {
+    "path": "guides/01_专业引用与规则发布执行指引.md",
+    "sha256": "e467c197d9034b01cd4b25adc3110b7dd8fe1e5756c3c25afddc6f4e724a2ec8",
+    "bytes": 6271,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/guides/01_专业引用与规则发布执行指引.md"
+  },
+  {
+    "path": "guides/02_标杆案例搜集与验收指引.md",
+    "sha256": "328912c288b1f22aa7d6742fdf4a2a00824da1d68ab54c2f2f1d97ea778601f3",
+    "bytes": 5381,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/guides/02_标杆案例搜集与验收指引.md"
+  },
+  {
+    "path": "guides/03_Web工作台与云端部署方案.md",
+    "sha256": "f4c554999b23f745404ede8caa4506c280939f0272b493f9a7ece17cc1fd3a95",
+    "bytes": 7374,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/guides/03_Web工作台与云端部署方案.md"
+  },
+  {
+    "path": "guides/04_智能追问接入与验收.md",
+    "sha256": "958c596c41cc99c0152085a4e25dc63eb6a218560b6d3e06f096f1e3ba8eaf92",
+    "bytes": 3460,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/guides/04_智能追问接入与验收.md"
+  },
+  {
+    "path": "indexes/official_sources.jsonl",
+    "sha256": "8653f1996eb2db413bf86e2e9fedb0c8f91eac06f0545596748f555891988164",
+    "bytes": 462427,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/indexes/official_sources.jsonl"
+  },
+  {
+    "path": "README.md",
+    "sha256": "05c3df8f57b6137b12c1f48facedbeb9ceb69910f0c5ad36eec427e1fb26ea46",
+    "bytes": 1323,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/README.md"
+  },
+  {
+    "path": "schema/001_core_schema.sql",
+    "sha256": "5d95666fab71d551cc201c63b9eec3672b8eb94b165a4fc7932760b949c5e3f8",
+    "bytes": 9869,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/schema/001_core_schema.sql"
+  },
+  {
+    "path": "schema/030_legal_evidence_pipeline.sql",
+    "sha256": "e0cf391772e732ef34f0af48d22965e638160f520707ad29c09695ba48a82536",
+    "bytes": 5798,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/schema/030_legal_evidence_pipeline.sql"
+  },
+  {
+    "path": "schema/031_unified_tax_answer_review.sql",
+    "sha256": "2cfeaa05bca74c0ed7c32920a10984d495ebc241b0bf442c87ea731d2979b805",
+    "bytes": 5020,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/schema/031_unified_tax_answer_review.sql"
+  },
+  {
+    "path": "schema/032_harden_legal_decision_release.sql",
+    "sha256": "4d05276de2088db83e86f83fcc4016c0431b650f0bc36c0f5eec1465ab9386fa",
+    "bytes": 2867,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/schema/032_harden_legal_decision_release.sql"
+  },
+  {
+    "path": "schema/033_app_workbench.sql",
+    "sha256": "340cb82b278cda97aec6cc5ff2b97a317ae6a9a4dc8960b9c85f9293c2f66d0d",
+    "bytes": 1070,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/schema/033_app_workbench.sql"
+  },
+  {
+    "path": "schema/crosstax_structure.sql",
+    "sha256": "a0ed743f9042fe13ee67eac70d6e6098fce2fe24f9483f8e49feaa71d7f54ad6",
+    "bytes": 99971,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/schema/crosstax_structure.sql"
+  },
+  {
+    "path": "SOURCE_VERSION.json",
+    "sha256": "93784b89fefaefd7920758af632087ed85ba194abb3b2deb85247fa0e5cf7dca",
+    "bytes": 372,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/SOURCE_VERSION.json"
+  },
+  {
+    "path": "STATUS.md",
+    "sha256": "e2afb5e72772a139c404c22e8ec1ffdff0a88dcf0ae75051e6b9fda7ac855211",
+    "bytes": 321,
+    "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/STATUS.md"
+  }
+]

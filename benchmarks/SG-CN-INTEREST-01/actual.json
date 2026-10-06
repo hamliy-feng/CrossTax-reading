@@ -1,0 +1,117 @@
+{
+  "code_base_commit": "84dab85cbb41b853bf3c60b855909beafd39a565",
+  "new_code_sha256": "fc4e4a34bc866eff6c9b11a1aca86e624470bda3ba8c7d46b016cabaa3b3f714",
+  "recorded_at": "2026-10-06T18:15:56.035984+00:00",
+  "input": {
+    "facts": {
+      "payer": "SG",
+      "recipient": "CN",
+      "income_type": "INTEREST",
+      "transaction_subtype": "debt_interest",
+      "date": "2026-10-07",
+      "classification_confirmed": true,
+      "beneficial_owner": true,
+      "recipient_tax_resident": true,
+      "eligibility_documents": true,
+      "principal_purpose_test_passed": true,
+      "pe_effective_connection": false,
+      "no_cn_pe_effective_connection": true,
+      "recipient_tax_resident_SG": false,
+      "china_source": false,
+      "shareholding_conditions_met": true
+    },
+    "amount": "1000000.00",
+    "currency": "CNY"
+  },
+  "legal_search": {
+    "query": "利息",
+    "results": [
+      {
+        "id": "guide-SG-28-1",
+        "official_title": "新加坡投资税收指南",
+        "original_url": "https://www.chinatax.gov.cn/chinatax/c103103/c2582367/5246404/files/ae270d57027f412e8ac7029185e944c9.pdf",
+        "page_num": 28,
+        "source_locator": "sha256:66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445#page=28;part=1",
+        "original_sha256": "66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445",
+        "chunk_sha256": "b0e450bc18e6057b135bafa5c3c7ece1e7afde35fa641efef0e30fba0643d1ab",
+        "excerpt": "中国居民赴新加坡共和国投资税收指南\n20\n税目 对应税率（%）\n预提所得税 -\n股息 0\n利息 15\n特许权使用费 10\n分支机构汇回利润 不适用\n2.2.1.4  税收优惠\n新加坡提供下列税收优惠及减免：\n（1）先锋企业和先锋服务公司税收优惠：该项优惠主要针对从\n事于能够促进新加坡经济和科技发展的经营活动的企业，该类企业\n可以通过申请认证为先锋企业以享受相关税收优惠。先锋企业符合\n规定的利润可享受至多十五年的免征企业所得税的待遇。该规定有\n效期延至 2028 年 12 月 31 日。\n（2）发展和扩张优惠（DEI）：该项优惠主要针对在新加坡境\n内从事高附加值经营活动、但又不符合先锋企业税收优",
+        "level": "research_guide",
+        "applicability_note": "国别研究指南，不能代替当地正式法律"
+      },
+      {
+        "id": "guide-SG-34-1",
+        "official_title": "新加坡投资税收指南",
+        "original_url": "https://www.chinatax.gov.cn/chinatax/c103103/c2582367/5246404/files/ae270d57027f412e8ac7029185e944c9.pdf",
+        "page_num": 34,
+        "source_locator": "sha256:66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445#page=34;part=1",
+        "original_sha256": "66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445",
+        "chunk_sha256": "5ed59647c638bc45793791da719844b3bcb4ad4a75e42e88b99ead825eec714a",
+        "excerpt": "中国居民赴新加坡共和国投资税收指南\n26\n（13）获批航运融资安排（ASFA）奖励：根据 2025 年预算案计\n划，为进一步支持新加坡航运行业的发展，将引入针对船舶和集装\n箱的获批航运融资安排奖励，为经批准的实体于 2031 年 12 月 31 日\n或之前因购买或建造船舶和海运集装箱而签订的合格协议招致的须\n向非税收居民贷款人支付的利息和相关款项提供预提所得税豁免。\nASFA 奖励受益人基于融资租赁协议向非税收居民出租人支付的船舶\n和集装箱租赁款项（不包括非税收居民通过其在新加坡的常设机构\n开展任何业务产生的款项）也将被豁免预提所得税。\n（14）全球贸易商计划（GTP）：该计划旨在鼓励跨国公司",
+        "level": "research_guide",
+        "applicability_note": "国别研究指南，不能代替当地正式法律"
+      },
+      {
+        "id": "guide-SG-36-1",
+        "official_title": "新加坡投资税收指南",
+        "original_url": "https://www.chinatax.gov.cn/chinatax/c103103/c2582367/5246404/files/ae270d57027f412e8ac7029185e944c9.pdf",
+        "page_num": 36,
+        "source_locator": "sha256:66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445#page=36;part=1",
+        "original_sha256": "66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445",
+        "chunk_sha256": "610c559bf06e63c87f3d6a6182160cb6483bd54606b782c9061797ac735bfd17",
+        "excerpt": "中国居民赴新加坡共和国投资税收指南\n28\n低于上一年度基金资产管理规模的 5%。\n每个基金管理人能够享受该项优惠的有效期限为五年，且不可\n续期。该优惠由MAS 管理，申请截止日期为 2028 年 12 月 31 日。\n2.2.1.5  应纳税所得额\n（1）收入范围\n根据新加坡《所得税法》，应税所得主要包括以下几方面：\n①源自商业贸易或活动的所得；\n②源自投资的收益，如股息、利息和租金；\n③特许权使用费、保险费和源自财产的其他所得；\n④其他实质性所得。\n（2）不征税和免税收入\n新加坡目前暂不对资本利得征税。然而，在特定情形下，新加\n坡税务局可能将涉及获得或处置房地产、股票或股份的交易认定为\n贸易",
+        "level": "research_guide",
+        "applicability_note": "国别研究指南，不能代替当地正式法律"
+      },
+      {
+        "id": "guide-SG-38-1",
+        "official_title": "新加坡投资税收指南",
+        "original_url": "https://www.chinatax.gov.cn/chinatax/c103103/c2582367/5246404/files/ae270d57027f412e8ac7029185e944c9.pdf",
+        "page_num": 38,
+        "source_locator": "sha256:66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445#page=38;part=1",
+        "original_sha256": "66e032d4eee7dc24ee90692344f72779b276809f8bf17f8820173d5273b2b445",
+        "chunk_sha256": "33d061ea8a503d20e5cd1dbf771839725a9cce731a2e7c01c82ccf0b244da3fa",
+        "excerpt": "中国居民赴新加坡共和国投资税收指南\n30\n出法。\n准备金：在《新加坡财务报告准则》（109）金融工具准则下，\n如果存在违约风险，即使没有发生损失事件，企业也应确认 12 个月\n预期信用损失(Expected credit loss，简称 ECL)或终身ECL 的减值\n准备。只有在损益表中确认的、与收入相关的信用受损的金融工具\n的减值准备才允许在税前扣除，以前年度确认的减值准备在损益表\n中发生转回的，将视为应税项目征税。\n租赁：《新加坡财务报告准则》（116）租赁准则分别对承租人\n和出租人租赁业务的会计处理进行了规定，目前新加坡所得税主计\n长（即，主管税务局）采用以下的税务处理：\n①出租人\n鉴于",
+        "level": "research_guide",
+        "applicability_note": "国别研究指南，不能代替当地正式法律"
+      }
+    ],
+    "source": "CrossTax PostgreSQL",
+    "retrieved_at": "2026-10-07"
+  },
+  "assessment": {
+    "facts": {
+      "payer": "SG",
+      "recipient": "CN",
+      "income_type": "INTEREST",
+      "transaction_subtype": "debt_interest",
+      "date": "2026-10-07",
+      "classification_confirmed": true,
+      "beneficial_owner": true,
+      "recipient_tax_resident": true,
+      "eligibility_documents": true,
+      "principal_purpose_test_passed": true,
+      "pe_effective_connection": false,
+      "no_cn_pe_effective_connection": true,
+      "recipient_tax_resident_SG": false,
+      "china_source": false,
+      "shareholding_conditions_met": true
+    },
+    "amount": "1000000.00",
+    "currency": "CNY",
+    "tax_estimate": null,
+    "conditional_example": null,
+    "status": "rule_not_published",
+    "missing_facts": [],
+    "conflicts": [],
+    "formula": "amount × taxable_fraction × nominal_rate",
+    "sources": [],
+    "rule_version": null,
+    "confidence_explanation": {
+      "facts_complete": true,
+      "period_checked": false,
+      "conflicts": [],
+      "basis": "来源、适用日期、事实完整性与冲突；无模型正确概率"
+    }
+  },
+  "model_run": null
+}
