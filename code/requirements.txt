@@ -1,4 +1,4 @@
-# Web gateway uses Python's standard library. PDF research scripts use pypdf.
+# Python workbench, document parsers and legal database tools.
 pypdf==6.19.0
 fastapi==0.135.3
 uvicorn==0.44.0

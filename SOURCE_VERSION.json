@@ -1,9 +1,9 @@
 {
   "private_source_repository": "hamliy-feng/CrossTax",
-  "source_commit": "84dab85cbb41b853bf3c60b855909beafd39a565",
-  "generated_at": "2026-10-06T18:19:16.199387+00:00",
-  "source_has_uncommitted_changes": true,
+  "source_commit": "b1791be3bd4c964b47b00a479f1be6591e467b79",
+  "generated_at": "2026-10-06T18:57:13.301613+00:00",
+  "source_has_uncommitted_changes": false,
   "disclosure": "必要源码快照以文件 SHA 为准；源提交和工作树状态分别记录",
   "documents": 5,
-  "source_index_rows": 650
+  "source_index_rows": 649
 }

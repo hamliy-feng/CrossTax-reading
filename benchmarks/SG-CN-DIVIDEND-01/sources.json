@@ -1,18 +1,22 @@
 [
   {
     "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-company/payments-that-are-not-subject-to-withholding-tax",
-    "retrieved_at": "2026-10-06T18:15:20.870655+00:00",
-    "sha256": null,
-    "http_status": null,
-    "error": "ConnectError",
+    "final_url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-company/payments-that-are-not-subject-to-withholding-tax",
+    "retrieved_at": "2026-10-06T18:20:59.338693+00:00",
+    "sha256": "155fdbab30dfdb5309b434ca4ee624abfbf7604dad3768c34261c53d47c693a3",
+    "bytes": 269882,
+    "path": "research/benchmarks/_sources/155fdbab30dfdb5309b434ca4ee624abfbf7604dad3768c34261c53d47c693a3.html",
+    "http_status": 200,
     "note": "新加坡股息扣缴说明；国内法与协定上限须分开"
   },
   {
     "url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/list-of-dtas-limited-dtas-and-eoi-arrangements",
-    "retrieved_at": "2026-10-06T18:14:56.393432+00:00",
-    "sha256": null,
-    "http_status": null,
-    "error": "ConnectError",
+    "final_url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/list-of-dtas-limited-dtas-and-eoi-arrangements",
+    "retrieved_at": "2026-10-06T18:20:55.548385+00:00",
+    "sha256": "da093f62497382cc3236c007c4fbe06f6a0e8ecbe31791b28b2e85574de70c35",
+    "bytes": 259951,
+    "path": "research/benchmarks/_sources/da093f62497382cc3236c007c4fbe06f6a0e8ecbe31791b28b2e85574de70c35.html",
+    "http_status": 200,
     "note": "官方协定目录；需逐一核对协议、议定书与 MLI"
   }
 ]

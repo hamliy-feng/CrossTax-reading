@@ -86,12 +86,22 @@ def rate(owner):
     times.append(now)
 
 
+def auth_cookie_header(request):
+    from http.cookies import SimpleCookie
+    cookies=SimpleCookie()
+    try:
+        cookies.load(request.headers.get('cookie',''))
+    except Exception:
+        return ''
+    return '; '.join(name+'='+m.value for name,m in cookies.items() if 'neonauth' in name)
+
+
 async def auth_session(request):
     if not AUTH_URL or 'neonauth' not in request.headers.get('cookie',''):
         return None
     try:
         async with httpx.AsyncClient(timeout=12) as c:
-            r=await c.get(AUTH_URL+'/get-session',headers={'Cookie':request.headers.get('cookie',''),'Origin':ORIGIN})
+            r=await c.get(AUTH_URL+'/get-session',headers={'Cookie':auth_cookie_header(request),'Origin':ORIGIN})
         if r.status_code!=200:
             raise HTTPException(503,'暂时无法确认登录状态，请稍后重试')
         data=r.json();user=(data or {}).get('user')
@@ -197,7 +207,12 @@ async def status(request:Request):
     prefs=store.get(owned(request),'preferences','model')
     if prefs:
         server.set_settings(prefs,owned(request));cfg=server.current_settings(owned(request))
-    return {**cfg,'app_version':VERSION,'workbench_enabled':True,'legal_retrieval_connected':True,'auth_configured':bool(AUTH_URL),'guest':not bool(request.state.user)}
+    try:
+        await asyncio.to_thread(legal_service.rows,'SELECT 1')
+        legal_connected=True
+    except Exception:
+        legal_connected=False
+    return {**cfg,'app_version':VERSION,'workbench_enabled':True,'legal_retrieval_connected':legal_connected,'auth_configured':bool(AUTH_URL),'guest':not bool(request.state.user)}
 
 
 @app.post('/api/settings')
@@ -235,7 +250,7 @@ async def auth_proxy(action:str,request:Request):
     async with httpx.AsyncClient(timeout=20,follow_redirects=False) as c:
         r=await c.request(request.method,AUTH_URL+'/'+action,json=body,
             params={'token':request.query_params.get('token',''),'callbackURL':ORIGIN+'/'} if request.method=='GET' else None,
-            headers={'Cookie':request.headers.get('cookie',''),'Origin':ORIGIN})
+            headers={'Cookie':auth_cookie_header(request),'Origin':ORIGIN})
     # Return no credential-bearing upstream bodies or access tokens to the UI.
     out=JSONResponse({'success':r.status_code<400,'message':'操作已提交，请查看邮箱或登录' if r.status_code<400 else '认证操作失败，请检查输入、验证状态或稍后重试'},status_code=200 if r.status_code<400 else min(r.status_code,503))
     from http.cookies import SimpleCookie
@@ -251,7 +266,20 @@ async def auth_proxy(action:str,request:Request):
 
 @app.get('/api/cases')
 async def cases(request:Request):
-    return {'cases':store.list(owned(request),'case'),'storage':'postgresql' if store.dsn else 'sqlite'}
+    owner=owned(request)
+    if not PRODUCTION and owner.startswith('guest:') and not store.get(owner,'preferences','legacy_import'):
+        previous=server.chat_store.list_cases(owner.removeprefix('guest:'))
+        for old in previous:
+            if store.get(owner,'case',old['id']):
+                continue
+            parent=None;messages=[]
+            for i,m in enumerate(old['messages']):
+                mid=str(uuid.uuid5(uuid.NAMESPACE_URL,owner+':'+str(old['id'])+':'+str(i)+':'+digest(m)))
+                messages.append({**m,'id':mid,'parent_id':parent,'status':'legacy_imported'})
+                parent=mid
+            write(owner,'case',{'id':old['id'],'title':old['title'],'facts':old['facts'],'extra':old['extra'],'messages':messages,'active_leaf':parent,'project_id':None})
+        write(owner,'preferences',{'id':'legacy_import','completed':True,'imported':len(previous)})
+    return {'cases':store.list(owner,'case'),'storage':'postgresql' if store.dsn else 'sqlite'}
 
 
 @app.post('/api/cases')
@@ -374,11 +402,17 @@ async def upload(request:Request,file:UploadFile):
     if sum(x['size'] for x in current)+len(body)>100*1024*1024:
         raise HTTPException(413,'当前账号附件容量上限为 100 MiB')
     id=uid();name=Path(file.filename or 'file.txt').name[:200];key=blobs.key(owner,id)
-    parsed=await asyncio.to_thread(file_service.parse,name,body)
+    if Path(name).suffix.lower() not in file_service.EXTENSIONS:
+        raise ValueError('支持 PDF、DOCX、TXT、MD、CSV、XLSX')
+    try:
+        parsed=await asyncio.to_thread(file_service.parse,name,body)
+    except Exception:
+        parsed={'chunks':[],'status':'failed','note':'文档解析失败，原件已保存；请检查格式、加密或重新上传文字版本','parser':'text extraction','text_characters':0}
     await asyncio.to_thread(blobs.put,key,body)
     obj={'id':id,'name':name,'size':len(body),'sha256':hashlib.sha256(body).hexdigest(),'object_key':key,**parsed}
     try:
-        return write(owner,'file',obj)
+        saved=write(owner,'file',obj)
+        return {k:v for k,v in saved.items() if k!='object_key'}
     except BaseException:
         await asyncio.to_thread(blobs.delete,key);raise
 
@@ -496,8 +530,16 @@ async def execute_tool(owner,name,args,allowed_files):
         if id not in allowed_files:
             raise ValueError('只能读取本轮已选择的文件')
         f=required(owner,'file',id)
-        selected=f['chunks'][:80]
-        result={'id':id,'name':f['name'],'sha256':f['sha256'],'chunks':selected,'status':f['status'],'partial':len(f['chunks'])>80}
+        start=max(0,int(args.get('start',0)));selected=[];characters=0
+        for chunk in f['chunks'][start:start+80]:
+            if characters+len(chunk['text'])>22000:
+                break
+            selected.append(chunk);characters+=len(chunk['text'])
+        if not selected and start<len(f['chunks']):
+            selected=[{**f['chunks'][start],'text':f['chunks'][start]['text'][:22000],'excerpt_only':True}]
+        next_start=start+len(selected)
+        result={'id':id,'name':f['name'],'sha256':f['sha256'],'chunks':selected,'status':f['status'],
+            'partial':next_start<len(f['chunks']) or any(x.get('excerpt_only') for x in selected),'next_start':next_start if next_start<len(f['chunks']) else None}
         result['evidence_id']=pin(owner,result,'file')['id'];return result
     if name=='tax_assess':
         result=jsonable_encoder(await asyncio.to_thread(legal_service.assess,args))
@@ -535,7 +577,7 @@ async def research_job(owner,case_id,payload,queue):
         allowed_files=user.get('file_ids',[])
         for id in allowed_files:
             required(owner,'file',id)
-        assistant={'id':uid(),'parent_id':user['id'],'role':'assistant','text':'','status':'running','events':[],'tools':[],'evidence_ids':[],'task_id':task['id'],'model':{},'created_at':time.time()}
+        assistant={'id':uid(),'parent_id':user['id'],'role':'assistant','text':'','status':'running','events':[],'tools':[],'evidence_ids':[],'task_id':task['id'],'model':{},'model_calls':[],'created_at':time.time()}
         c['messages'].append(assistant);c['active_leaf']=assistant['id'];c=write(owner,'case',c)
         assistant=next(m for m in c['messages'] if m['id']==assistant['id'])
         await emit({'type':'started','case':c,'task_id':task['id'],'message_id':assistant['id']})
@@ -573,10 +615,11 @@ async def research_job(owner,case_id,payload,queue):
             tools.append(tool_def('web_search','真实网页搜索，官方来源优先',{'query':{'type':'string'},'official_only':{'type':'boolean'}},['query']))
         if allowed_files:
             context.append({'role':'system','content':'使用人选取的文件：'+json.dumps([{'id':id,'name':required(owner,'file',id)['name']} for id in allowed_files],ensure_ascii=False)})
-            tools.append(tool_def('read_file','读取使用人本轮选择的文件原文和定位',{'file_id':{'type':'string'}},['file_id']))
+            tools.append(tool_def('read_file','分段读取本轮选择的文件原文和定位；partial 时可用 next_start 继续',{'file_id':{'type':'string'},'start':{'type':'integer','minimum':0}},['file_id']))
         if tools:
             for _ in range(3):
                 msg,usage=await model_client.complete(context,config,tools)
+                assistant['model_calls'].append({'provider':config[0],'model':config[1],'input_sha256':digest(context),'usage':usage,'status':'complete','stream':False})
                 calls=msg.get('tool_calls',[])
                 if not calls:
                     text=msg.get('content') or ''
@@ -585,19 +628,19 @@ async def research_job(owner,case_id,payload,queue):
                     break
                 context.append(msg)
                 enabled={x['function']['name'] for x in tools}
-                for call in calls[:4]:
+                for call in calls:
                     name=call['function']['name']
-                    event={'id':uid(),'name':name,'started_at':time.time()}
+                    event={'id':uid(),'name':name,'started_at':time.time(),'status':'running'}
+                    assistant['tools'].append(event);c=write(owner,'case',c)
                     try:
                         if name not in enabled:
                             raise ValueError('本轮未开启此工具')
                         args=json.loads(call['function']['arguments']);event['input']=args
                         result=await execute_tool(owner,name,args,allowed_files)
                         event.update(status='complete',output=result,ended_at=time.time())
-                    except (ValueError,HTTPException,RuntimeError,httpx.HTTPError,Exception) as exc:
+                    except Exception as exc:
                         result={'error':exc.detail if isinstance(exc,HTTPException) else '工具执行失败，请检查输入或服务配置'}
                         event.update(status='failed',output=result,ended_at=time.time())
-                    assistant['tools'].append(event)
                     if result.get('evidence_id'):
                         assistant['evidence_ids'].append(result['evidence_id'])
                     context.append({'role':'tool','tool_call_id':call['id'],'content':json.dumps(jsonable_encoder(result),ensure_ascii=False)})
@@ -606,26 +649,37 @@ async def research_job(owner,case_id,payload,queue):
             else:
                 assistant['text']=''
         if not assistant['text']:
+            model_run={'provider':config[0],'model':config[1],'input_sha256':digest(context),'usage':None,'status':'running','stream':True}
+            assistant['model_calls'].append(model_run)
             last=time.monotonic()
             async for evt in model_client.stream(context,config):
                 if evt['type']=='delta':
                     assistant['text']+=evt['text']
                     if len(assistant['text'])>100000:
                         raise RuntimeError('答复达到容量限制')
+                if evt['type']=='usage':
+                    model_run['usage']=evt['usage']
                 await emit(evt)
                 if time.monotonic()-last>1:
                     c=write(owner,'case',c);last=time.monotonic()
+            model_run['status']='complete'
         assistant['text']=model_client.finalize(assistant['text']);assistant['status']='complete'
         c=write(owner,'case',c);task['status']='complete';task['message_id']=assistant['id'];write(owner,'task',task)
         await emit({'type':'finish','case':c,'message_id':assistant['id']})
     except asyncio.CancelledError:
         if assistant and c:
+            for item in assistant.get('tools',[])+assistant.get('model_calls',[]):
+                if item.get('status')=='running':
+                    item['status']='interrupted'
             assistant['status']='interrupted';assistant['text']=model_client.finalize(assistant['text']) if assistant['text'] else ''
             write(owner,'case',c)
         task['status']='interrupted';write(owner,'task',task)
         await emit({'type':'error','message':'输出已停止，已保存当前内容'})
     except Exception as exc:
         if assistant and c:
+            for item in assistant.get('tools',[])+assistant.get('model_calls',[]):
+                if item.get('status')=='running':
+                    item['status']='failed'
             assistant['status']='failed';assistant['error']='执行未完成，可重新生成';write(owner,'case',c)
         task['status']='failed';task['error']='执行未完成';write(owner,'task',task)
         await emit({'type':'error','message':str(exc) if isinstance(exc,(ValueError,RuntimeError)) else '执行失败，请检查服务状态'})
@@ -758,6 +812,12 @@ async def recommend(request:Request,payload:dict):
     if not prefs['enabled'] or prefs['count']==0:
         return {'questions':[],'disabled':True}
     fingerprint=digest({'messages':active_messages(c),'facts':c.get('facts',{}),'preferences':prefs})
+    lock=locks.setdefault(('recommendation',owner,fingerprint),asyncio.Lock())
+    async with lock:
+        return await generate_recommendation(owner,c,m,prefs,fingerprint)
+
+
+async def generate_recommendation(owner,c,m,prefs,fingerprint):
     cached=store.get(owner,'recommendation',fingerprint)
     if cached and not cached.get('error'):
         return {**cached,'cached':True}

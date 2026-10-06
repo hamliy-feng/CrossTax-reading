@@ -12,7 +12,7 @@ window.installCrossTaxWorkbench=function(ctx){
   }
   function feedback(text){$("contextIndicator").textContent=text}
   function run(fn){return async()=>{try{await fn()}catch(err){feedback(err.message)}}}
-  function button(text,fn,cls="secondary-action"){const b=e("button",cls,text);b.type="button";b.addEventListener("click",run(fn));return b}
+  function button(text,fn,cls="secondary-action"){const b=e("button",cls,text);b.type="button";b.addEventListener("click",async()=>{if(b.disabled)return;b.disabled=true;try{await fn()}catch(err){feedback(err.message)}finally{b.disabled=false}});return b}
   function dialog(title){
     document.querySelectorAll("dialog.wb-dialog").forEach(d=>d.remove());
     const d=e("dialog","wb-dialog"),h=e("h2","",title),body=e("div","wb-dialog-body"),status=e("p","small-desc"),close=button("关闭",()=>d.close());
@@ -65,7 +65,7 @@ window.installCrossTaxWorkbench=function(ctx){
       const row=e("div","message "+m.role);row.append(e("div","msg-label",m.role==="user"?"我的问题":"答复"));
       if(m.text){const body=e("div",m.role==="assistant"?"markdown-output":"msg-body");
         if(m.role==="assistant")body.innerHTML=markdownToSafeHtml(m.text);else body.textContent=m.text;row.append(body)}
-      if(m.status&&m.status!=="complete")row.append(e("p","small-desc",{running:"正在生成…",failed:"执行未完成，可以重试",interrupted:"输出中断，当前内容已保存"}[m.status]||m.status));
+      if(m.status&&m.status!=="complete")row.append(e("p","small-desc",{running:"正在生成…",failed:"执行未完成，可以重试",interrupted:"输出中断，当前内容已保存",legacy_imported:"已导入原有记录"}[m.status]||m.status));
       if(m.tools?.length){const details=e("details","wb-tools"),summary=e("summary","","工具与来源（"+m.tools.length+"）");details.append(summary);
         m.tools.forEach(t=>{details.append(e("h4","",t.name+" · "+(t.status==="complete"?"已执行":"未完成")));
           const result=t.output||{};(result.results||[]).forEach(x=>{const item=e("div","wb-source");
@@ -100,7 +100,7 @@ window.installCrossTaxWorkbench=function(ctx){
     root.append(query,partner,button("检索法律库",async()=>{const r=await api("/api/legal/search",{query:query.value,partner:partner.value||null});out.replaceChildren();
       if(!r.results.length)out.append(e("p","","没有命中，尝试修改关键词。"));r.results.forEach(x=>{const card=e("div","wb-source");card.append(e("h3","",x.official_title),e("p","small-desc",x.applicability_note),e("p","",x.excerpt));if(x.original_url){const a=e("a","","原文 ↗");a.href=x.original_url;a.target="_blank";a.rel="noopener noreferrer";card.append(a)}card.append(e("p","small-desc","证据快照："+r.evidence_id+" · "+(x.version_id||"")+" · 页 "+(x.pdf_page_start||x.page_num||"")));out.append(card)})}),out)
   }
-  function render(){originalRender();if(wb.enabled){$("send").disabled=false;$("prompt").placeholder="输入问题，或描述你想完成的工作……";$("fileLabel").textContent=wb.attached.length?"已选 "+wb.attached.length+" 个附件":""}}
+  function render(){originalRender();if(wb.enabled){$("send").disabled=false;$("attachFile").textContent="＋ 上传文件";$("prompt").placeholder="输入问题，或描述你想完成的工作……";$("fileLabel").textContent=wb.attached.length?"已选 "+wb.attached.length+" 个附件":""}}
   async function send(){if(!wb.enabled)return ctx.originalSend();if(state.busy)return;
     const op=wb.operation||{},prompt=$("prompt").value.trim();if(!prompt&&op.operation!=="regenerate")return;
     const c=cur();state.view="research";

@@ -1,0 +1,240 @@
+{
+  "cases": [
+    {
+      "case_id": "CN-HK-DIVIDEND-01",
+      "case_type": "constructed_test",
+      "program_checks": {
+        "no_unpublished_tax_amount": true,
+        "real_legal_query_has_hits": true,
+        "expected_missing_fact": true,
+        "pe_exception": true
+      },
+      "program_pass": true,
+      "sources_archived": true,
+      "legal_applicability_review": "pending_full_sources_and_applicable_versions",
+      "independent_model_checks": "completed_research_checks",
+      "professional_verdict": "not_performed",
+      "recorded_at": "2026-10-06T18:21:05.428896+00:00",
+      "model_check_count": 3
+    },
+    {
+      "case_id": "CN-HK-DIVIDEND-02",
+      "case_type": "constructed_test",
+      "program_checks": {
+        "no_unpublished_tax_amount": true,
+        "real_legal_query_has_hits": true,
+        "expected_missing_fact": true,
+        "pe_exception": true
+      },
+      "program_pass": true,
+      "sources_archived": true,
+      "legal_applicability_review": "pending_full_sources_and_applicable_versions",
+      "independent_model_checks": "completed_research_checks",
+      "professional_verdict": "not_performed",
+      "recorded_at": "2026-10-06T18:21:05.644354+00:00",
+      "model_check_count": 3
+    },
+    {
+      "case_id": "CN-SG-EQUIP-01",
+      "case_type": "constructed_test",
+      "program_checks": {
+        "no_unpublished_tax_amount": true,
+        "real_legal_query_has_hits": true,
+        "expected_missing_fact": true,
+        "pe_exception": true
+      },
+      "program_pass": true,
+      "sources_archived": true,
+      "legal_applicability_review": "pending_full_sources_and_applicable_versions",
+      "independent_model_checks": "completed_research_checks",
+      "professional_verdict": "not_performed",
+      "recorded_at": "2026-10-06T18:21:03.266240+00:00",
+      "model_check_count": 3
+    },
+    {
+      "case_id": "CN-SG-EQUIP-02",
+      "case_type": "constructed_test",
+      "program_checks": {
+        "no_unpublished_tax_amount": true,
+        "real_legal_query_has_hits": true,
+        "expected_missing_fact": true,
+        "pe_exception": true
+      },
+      "program_pass": true,
+      "sources_archived": true,
+      "legal_applicability_review": "pending_full_sources_and_applicable_versions",
+      "independent_model_checks": "completed_research_checks",
+      "professional_verdict": "not_performed",
+      "recorded_at": "2026-10-06T18:21:03.508855+00:00",
+      "model_check_count": 3
+    },
+    {
+      "case_id": "CN-SG-SOFTWARE-01",
+      "case_type": "constructed_test",
+      "program_checks": {
+        "no_unpublished_tax_amount": true,
+        "real_legal_query_has_hits": true,
+        "expected_missing_fact": true,
+        "pe_exception": true
+      },
+      "program_pass": true,
+      "sources_archived": true,
+      "legal_applicability_review": "pending_full_sources_and_applicable_versions",
+      "independent_model_checks": "completed_research_checks",
+      "professional_verdict": "not_performed",
+      "recorded_at": "2026-10-06T18:21:03.809992+00:00",
+      "model_check_count": 3
+    },
+    {
+      "case_id": "CN-SG-SOFTWARE-02",
+      "case_type": "constructed_test",
+      "program_checks": {
+        "no_unpublished_tax_amount": true,
+        "real_legal_query_has_hits": true,
+        "expected_missing_fact": true,
+        "pe_exception": true
+      },
+      "program_pass": true,
+      "sources_archived": true,
+      "legal_applicability_review": "pending_full_sources_and_applicable_versions",
+      "independent_model_checks": "completed_research_checks",
+      "professional_verdict": "not_performed",
+      "recorded_at": "2026-10-06T18:21:04.018810+00:00",
+      "model_check_count": 3
+    },
+    {
+      "case_id": "SG-CN-DIVIDEND-01",
+      "case_type": "constructed_test",
+      "program_checks": {
+        "no_unpublished_tax_amount": true,
+        "real_legal_query_has_hits": true,
+        "expected_missing_fact": true,
+        "pe_exception": true
+      },
+      "program_pass": true,
+      "sources_archived": true,
+      "legal_applicability_review": "pending_full_sources_and_applicable_versions",
+      "independent_model_checks": "completed_research_checks",
+      "professional_verdict": "not_performed",
+      "recorded_at": "2026-10-06T18:21:04.323535+00:00",
+      "model_check_count": 3
+    },
+    {
+      "case_id": "SG-CN-DIVIDEND-02",
+      "case_type": "constructed_test",
+      "program_checks": {
+        "no_unpublished_tax_amount": true,
+        "real_legal_query_has_hits": true,
+        "expected_missing_fact": true,
+        "pe_exception": true
+      },
+      "program_pass": true,
+      "sources_archived": true,
+      "legal_applicability_review": "pending_full_sources_and_applicable_versions",
+      "independent_model_checks": "completed_research_checks",
+      "professional_verdict": "not_performed",
+      "recorded_at": "2026-10-06T18:21:04.559523+00:00",
+      "model_check_count": 3
+    },
+    {
+      "case_id": "SG-CN-INTEREST-01",
+      "case_type": "constructed_test",
+      "program_checks": {
+        "no_unpublished_tax_amount": true,
+        "real_legal_query_has_hits": true,
+        "expected_missing_fact": true,
+        "pe_exception": true
+      },
+      "program_pass": true,
+      "sources_archived": true,
+      "legal_applicability_review": "pending_full_sources_and_applicable_versions",
+      "independent_model_checks": "completed_research_checks",
+      "professional_verdict": "not_performed",
+      "recorded_at": "2026-10-06T18:21:04.893973+00:00",
+      "model_check_count": 3
+    },
+    {
+      "case_id": "SG-CN-INTEREST-02",
+      "case_type": "constructed_test",
+      "program_checks": {
+        "no_unpublished_tax_amount": true,
+        "real_legal_query_has_hits": true,
+        "expected_missing_fact": true,
+        "pe_exception": true
+      },
+      "program_pass": true,
+      "sources_archived": true,
+      "legal_applicability_review": "pending_full_sources_and_applicable_versions",
+      "independent_model_checks": "completed_research_checks",
+      "professional_verdict": "not_performed",
+      "recorded_at": "2026-10-06T18:21:05.127958+00:00",
+      "model_check_count": 3
+    }
+  ],
+  "program_pass": 10,
+  "count": 10,
+  "professional_pass": 0,
+  "model_checks_complete": 10,
+  "official_sources": {
+    "sg_dta_list": {
+      "url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/list-of-dtas-limited-dtas-and-eoi-arrangements",
+      "final_url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/list-of-dtas-limited-dtas-and-eoi-arrangements",
+      "retrieved_at": "2026-10-06T18:20:55.548385+00:00",
+      "sha256": "da093f62497382cc3236c007c4fbe06f6a0e8ecbe31791b28b2e85574de70c35",
+      "bytes": 259951,
+      "path": "research/benchmarks/_sources/da093f62497382cc3236c007c4fbe06f6a0e8ecbe31791b28b2e85574de70c35.html",
+      "http_status": 200,
+      "note": "官方协定目录；需逐一核对协议、议定书与 MLI"
+    },
+    "cn_sg_explanation": {
+      "url": "https://fgk.chinatax.gov.cn/zcfgk/c100012/c5194181/content.html",
+      "final_url": "https://fgk.chinatax.gov.cn/zcfgk/c100012/c5194181/content.html",
+      "retrieved_at": "2026-10-06T18:20:56.980214+00:00",
+      "sha256": "f344e28affc80c1db974b301b9efff94215f7133fe53fda54b2ec3c9bcb5db94",
+      "bytes": 129297,
+      "path": "research/benchmarks/_sources/f344e28affc80c1db974b301b9efff94215f7133fe53fda54b2ec3c9bcb5db94.html",
+      "http_status": 200,
+      "note": "国税发〔2010〕75号中新协定条文解释；含后续废止提示"
+    },
+    "sg_payments": {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-company/payments-that-are-subject-to-withholding-tax",
+      "final_url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-company/payments-that-are-subject-to-withholding-tax",
+      "retrieved_at": "2026-10-06T18:20:57.913233+00:00",
+      "sha256": "c68048a192053d1d7cee5bac956409f9e10c4a1e1cf4475353f1ea98489cf7bf",
+      "bytes": 333143,
+      "path": "research/benchmarks/_sources/c68048a192053d1d7cee5bac956409f9e10c4a1e1cf4475353f1ea98489cf7bf.html",
+      "http_status": 200,
+      "note": "官方扣缴及软件权利分类问答；新加坡付款侧说明"
+    },
+    "sg_dividends": {
+      "url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-company/payments-that-are-not-subject-to-withholding-tax",
+      "final_url": "https://www.iras.gov.sg/taxes/withholding-tax/payments-to-non-resident-company/payments-that-are-not-subject-to-withholding-tax",
+      "retrieved_at": "2026-10-06T18:20:59.338693+00:00",
+      "sha256": "155fdbab30dfdb5309b434ca4ee624abfbf7604dad3768c34261c53d47c693a3",
+      "bytes": 269882,
+      "path": "research/benchmarks/_sources/155fdbab30dfdb5309b434ca4ee624abfbf7604dad3768c34261c53d47c693a3.html",
+      "http_status": 200,
+      "note": "新加坡股息扣缴说明；国内法与协定上限须分开"
+    },
+    "hk_arrangement": {
+      "url": "https://www.ird.gov.hk/eng/pdf/Consolidated_Text_Mainland_HKSAR.pdf",
+      "final_url": "https://www.ird.gov.hk/eng/pdf/Consolidated_Text_Mainland_HKSAR.pdf",
+      "retrieved_at": "2026-10-06T18:21:00.699869+00:00",
+      "sha256": "c9f3b53fdc03441f24e8b6fe5148e69c1b50ad26e361e60589fa20983f775baf",
+      "bytes": 369664,
+      "path": "research/benchmarks/_sources/c9f3b53fdc03441f24e8b6fe5148e69c1b50ad26e361e60589fa20983f775baf.pdf",
+      "http_status": 200,
+      "note": "内地香港安排综合文本；仍须逐一核对议定书及程序"
+    },
+    "hk_explanation": {
+      "url": "https://www.ird.gov.hk/eng/pdf/dipn44.pdf",
+      "final_url": "https://www.ird.gov.hk/eng/pdf/dipn44.pdf",
+      "retrieved_at": "2026-10-06T18:21:01.931681+00:00",
+      "sha256": "b894ef31bbeb34e597b0c5d12004dde45718638e5e841c14b1510d02bb705c43",
+      "bytes": 345955,
+      "path": "research/benchmarks/_sources/b894ef31bbeb34e597b0c5d12004dde45718638e5e841c14b1510d02bb705c43.pdf",
+      "http_status": 200,
+      "note": "香港税务局 DIPN44；解释性资料，不能替代安排原文"
+    }
+  }
+}

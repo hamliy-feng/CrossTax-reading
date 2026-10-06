@@ -2,7 +2,7 @@
   {
     "url": "https://fgk.chinatax.gov.cn/zcfgk/c100012/c5194181/content.html",
     "final_url": "https://fgk.chinatax.gov.cn/zcfgk/c100012/c5194181/content.html",
-    "retrieved_at": "2026-10-06T18:15:08.304837+00:00",
+    "retrieved_at": "2026-10-06T18:20:56.980214+00:00",
     "sha256": "f344e28affc80c1db974b301b9efff94215f7133fe53fda54b2ec3c9bcb5db94",
     "bytes": 129297,
     "path": "research/benchmarks/_sources/f344e28affc80c1db974b301b9efff94215f7133fe53fda54b2ec3c9bcb5db94.html",
@@ -11,10 +11,12 @@
   },
   {
     "url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/list-of-dtas-limited-dtas-and-eoi-arrangements",
-    "retrieved_at": "2026-10-06T18:14:56.393432+00:00",
-    "sha256": null,
-    "http_status": null,
-    "error": "ConnectError",
+    "final_url": "https://www.iras.gov.sg/taxes/international-tax/international-tax-agreements-concluded-by-singapore/list-of-dtas-limited-dtas-and-eoi-arrangements",
+    "retrieved_at": "2026-10-06T18:20:55.548385+00:00",
+    "sha256": "da093f62497382cc3236c007c4fbe06f6a0e8ecbe31791b28b2e85574de70c35",
+    "bytes": 259951,
+    "path": "research/benchmarks/_sources/da093f62497382cc3236c007c4fbe06f6a0e8ecbe31791b28b2e85574de70c35.html",
+    "http_status": 200,
     "note": "官方协定目录；需逐一核对协议、议定书与 MLI"
   }
 ]

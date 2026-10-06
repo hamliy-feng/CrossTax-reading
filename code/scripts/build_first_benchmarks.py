@@ -37,7 +37,7 @@ def main():
     for name,(url,note) in SOURCES.items():
         now=datetime.now(timezone.utc).isoformat()
         try:
-            r=httpx.get(url,follow_redirects=True,timeout=30,headers={'User-Agent':'CrossTax Research/1.0'})
+            r=httpx.get(url,follow_redirects=True,trust_env=False,timeout=30,headers={'User-Agent':'CrossTax Research/1.0'})
             r.raise_for_status();body=r.content;sha=hashlib.sha256(body).hexdigest()
             suffix='.pdf' if body[:5]==b'%PDF-' else '.html'
             path=raw/(sha+suffix)

@@ -108,6 +108,11 @@ class WorkbenchTests(unittest.TestCase):
         self.assertEqual(self.client.post('/api/files',files={'file':('a.exe',b'bad')}).status_code,400)
         r=self.client.post('/api/files',files={'file':('a.txt',b'a'*(25*1024*1024+1))});self.assertEqual(r.status_code,413)
 
+    def test_parse_failure_keeps_original(self):
+        r=self.client.post('/api/files',files={'file':('broken.docx',b'corrupted document')})
+        self.assertEqual(r.status_code,200,r.text);f=r.json();self.assertEqual(f['status'],'failed')
+        self.assertEqual(self.client.get('/api/files/'+f['id']+'/download').content,b'corrupted document')
+
     def test_summary_versions_and_stale(self):
         self.case();self.chat();p=self.client.post('/api/projects',json={'title':'作品'}).json()
         self.client.post('/api/projects/move',json={'case_ids':[1],'project_id':p['id']})

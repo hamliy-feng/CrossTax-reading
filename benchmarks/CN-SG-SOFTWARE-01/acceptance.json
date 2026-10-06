@@ -8,9 +8,10 @@
     "pe_exception": true
   },
   "program_pass": true,
-  "sources_archived": false,
-  "legal_applicability_review": "pending",
-  "independent_model_checks": "pending",
+  "sources_archived": true,
+  "legal_applicability_review": "pending_full_sources_and_applicable_versions",
+  "independent_model_checks": "completed_research_checks",
   "professional_verdict": "not_performed",
-  "recorded_at": "2026-10-06T18:15:54.931307+00:00"
+  "recorded_at": "2026-10-06T18:21:03.809992+00:00",
+  "model_check_count": 3
 }

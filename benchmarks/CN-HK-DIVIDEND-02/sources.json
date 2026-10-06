@@ -1,18 +1,22 @@
 [
   {
     "url": "https://www.ird.gov.hk/eng/pdf/Consolidated_Text_Mainland_HKSAR.pdf",
-    "retrieved_at": "2026-10-06T18:15:31.917834+00:00",
-    "sha256": null,
-    "http_status": null,
-    "error": "ConnectError",
+    "final_url": "https://www.ird.gov.hk/eng/pdf/Consolidated_Text_Mainland_HKSAR.pdf",
+    "retrieved_at": "2026-10-06T18:21:00.699869+00:00",
+    "sha256": "c9f3b53fdc03441f24e8b6fe5148e69c1b50ad26e361e60589fa20983f775baf",
+    "bytes": 369664,
+    "path": "research/benchmarks/_sources/c9f3b53fdc03441f24e8b6fe5148e69c1b50ad26e361e60589fa20983f775baf.pdf",
+    "http_status": 200,
     "note": "内地香港安排综合文本；仍须逐一核对议定书及程序"
   },
   {
     "url": "https://www.ird.gov.hk/eng/pdf/dipn44.pdf",
-    "retrieved_at": "2026-10-06T18:15:42.987115+00:00",
-    "sha256": null,
-    "http_status": null,
-    "error": "ConnectError",
+    "final_url": "https://www.ird.gov.hk/eng/pdf/dipn44.pdf",
+    "retrieved_at": "2026-10-06T18:21:01.931681+00:00",
+    "sha256": "b894ef31bbeb34e597b0c5d12004dde45718638e5e841c14b1510d02bb705c43",
+    "bytes": 345955,
+    "path": "research/benchmarks/_sources/b894ef31bbeb34e597b0c5d12004dde45718638e5e841c14b1510d02bb705c43.pdf",
+    "http_status": 200,
     "note": "香港税务局 DIPN44；解释性资料，不能替代安排原文"
   }
 ]
