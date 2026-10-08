@@ -36,7 +36,7 @@
 
 ## 免费平台配置与部署
 
-1. Neon 新建专属 CrossTax Free 项目，确认仍是免费计划；不要选择自动升级。获取 PostgreSQL、Auth 和私有 bucket 的参数，保存到平台秘密变量。
+1. Neon 新建专属 Taxroute Free 项目，确认仍是免费计划；不要选择自动升级。获取 PostgreSQL、Auth 和私有 bucket 的参数，保存到平台秘密变量。
 2. 对现有本机专库执行只读 custom dump；先在新云库恢复 `crosstax` schema，核对每表行数、关键视图和备份 SHA。禁止恢复其他项目角色、用户聊天或 `.secrets`。原始法律文件迁移到私有 bucket，保持 SHA 与逻辑定位。
 3. 在平台配置 Auth 邮箱密码、验证及找回密码，添加实际 HTTPS 为可信来源；验证邮件服务及已购域名 DNS。没有域名时先用平台 HTTPS，邮件发送能力单独实测。
 4. Render 使用私有完整仓库，按根目录 `render.yaml` 创建 Free Web Service。构建 `pip install -r requirements.txt`；启动 `uvicorn workbench:app --app-dir web --host 0.0.0.0 --port $PORT --workers 1`。

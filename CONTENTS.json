@@ -7,8 +7,8 @@
   },
   {
     "path": "ALL_CONTEXT.md",
-    "sha256": "5f4de78f7f9b07c068b57913752f58df62a398ec96b974161194a07aaa1c2ac7",
-    "bytes": 32851,
+    "sha256": "d4f7bd749f333f92a18c5f09831c5004d15134dd635cabf3922f6ca325441027",
+    "bytes": 32370,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/ALL_CONTEXT.md"
   },
   {
@@ -799,13 +799,13 @@
   },
   {
     "path": "docs/index.html",
-    "sha256": "160e7f2fb2a5d2e67cc1664bccff0403357891f104b5e40fa21581780d264532",
+    "sha256": "5108f3880c1a55b3d504c5b82a8b52c87cfe732bb198386b434e1fb318b458f5",
     "bytes": 1922,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/docs/index.html"
   },
   {
     "path": "guides/00_阅读入口.md",
-    "sha256": "fe6733dd6ac593c50dc8416dc4a55ad2a6bca0fc055c771bc97a4391a74d5019",
+    "sha256": "60472d19727dafbc7fe66576593d3beb368dcf7a19122b094815b775c44fed45",
     "bytes": 4204,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/guides/00_阅读入口.md"
   },
@@ -823,7 +823,7 @@
   },
   {
     "path": "guides/03_Web工作台与云端部署方案.md",
-    "sha256": "f4c554999b23f745404ede8caa4506c280939f0272b493f9a7ece17cc1fd3a95",
+    "sha256": "da99789b9ec68855c044f26ebc7e474430255d156c46366b70d64bdf3c8f317a",
     "bytes": 7374,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/guides/03_Web工作台与云端部署方案.md"
   },
@@ -841,8 +841,8 @@
   },
   {
     "path": "README.md",
-    "sha256": "05c3df8f57b6137b12c1f48facedbeb9ceb69910f0c5ad36eec427e1fb26ea46",
-    "bytes": 1323,
+    "sha256": "e4cfb44d3fd26427a0377011721b49e809953109cee87e7dafbed95174d117bd",
+    "bytes": 1516,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/README.md"
   },
   {
@@ -883,8 +883,8 @@
   },
   {
     "path": "SOURCE_VERSION.json",
-    "sha256": "d0928342024b35faea88ba0cfe6ae241a95781dc52a8c7aa1402c4368e84f24a",
-    "bytes": 373,
+    "sha256": "73ea634ace8edc4b2bcd0af0b6ff0421150716aab9a1caf2475964d49c7d2279",
+    "bytes": 598,
     "raw_url": "https://raw.githubusercontent.com/hamliy-feng/CrossTax-reading/main/SOURCE_VERSION.json"
   },
   {

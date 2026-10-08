@@ -5,5 +5,8 @@
   "source_has_uncommitted_changes": false,
   "disclosure": "必要源码快照以文件 SHA 为准；源提交和工作树状态分别记录",
   "documents": 5,
-  "source_index_rows": 649
+  "source_index_rows": 649,
+  "presentation_brand": "Taxroute",
+  "presentation_updated_at": "2026-10-08T08:11:49.453034+00:00",
+  "presentation_note": "仅更新公开入口与指引的品牌文字；code/和schema/仍为source_commit对应的历史快照。"
 }
